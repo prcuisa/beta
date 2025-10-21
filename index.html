@@ -1,609 +1,1145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRCUISA Dev | Web Development & Digital Solutions</title>
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              200: '#bae6fd',
-              300: '#7dd3fc',
-              400: '#38bdf8',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1',
-              800: '#075985',
-              900: '#0c4a6e',
-            },
-            dark: '#0f172a'
-          },
-          animation: {
-            'float': 'float 6s ease-in-out infinite',
-            'wave': 'wave 8s linear infinite',
-            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'bounce-slow': 'bounce 3s infinite'
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-15px)' },
-            },
-            wave: {
-              '0%': { transform: 'rotate(0deg)' },
-              '10%': { transform: 'rotate(14deg)' },
-              '20%': { transform: 'rotate(-8deg)' },
-              '30%': { transform: 'rotate(14deg)' },
-              '40%': { transform: 'rotate(-4deg)' },
-              '50%': { transform: 'rotate(10deg)' },
-              '60%': { transform: 'rotate(0deg)' },
-              '100%': { transform: 'rotate(0deg)' },
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRCUISA - Digital Creative Solutions</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/prcuisa/beta/refs/heads/main/logodark.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/prcuisa/beta/refs/heads/main/logodark.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/prcuisa/beta/refs/heads/main/logodark.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'display': ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#e6f7f9',
+                            100: '#c0ebf0',
+                            200: '#96dee7',
+                            300: '#66d1dd',
+                            400: '#3cc6d5',
+                            500: '#009AA5',
+                            600: '#008a94',
+                            700: '#007780',
+                            800: '#00656d',
+                            900: '#00464d',
+                        },
+                        accent: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-reverse': 'float-reverse 8s ease-in-out infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': {
+                                transform: 'translateY(0)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-20px)'
+                            },
+                        },
+                        'float-reverse': {
+                            '0%, 100%': {
+                                transform: 'translateY(0)'
+                            },
+                            '50%': {
+                                transform: 'translateY(20px)'
+                            },
+                        },
+                        gradient: {
+                            '0%, 100%': {
+                                backgroundPosition: '0% 50%'
+                            },
+                            '50%': {
+                                backgroundPosition: '100% 50%'
+                            },
+                        },
+                        glow: {
+                            '0%': {
+                                boxShadow: '0 0 20px rgba(0, 154, 165, 0.5)',
+                            },
+                            '100%': {
+                                boxShadow: '0 0 30px rgba(0, 154, 165, 0.8)',
+                            },
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
             }
-          }
         }
-      }
-    }
-  </script>
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background-color: #f8fafc;
-    }
-    
-    .hero-gradient {
-      background: linear-gradient(135deg, rgba(14,165,233,0.9) 0%, rgba(6,78,118,0.9) 100%);
-    }
-    
-    .code-bg {
-      background: #1e293b;
-      background-image: 
-        radial-gradient(#334155 1px, transparent 1px),
-        radial-gradient(#334155 1px, transparent 1px);
-      background-size: 40px 40px;
-      background-position: 0 0, 20px 20px;
-    }
-    
-    .service-card {
-      transition: all 0.3s ease;
-      perspective: 1000px;
-    }
-    
-    .service-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    
-    .project-card {
-      transition: all 0.3s ease;
-    }
-    
-    .project-card:hover {
-      transform: scale(1.03);
-    }
-    
-    .tech-icon {
-      transition: all 0.3s ease;
-    }
-    
-    .tech-icon:hover {
-      transform: scale(1.2) rotate(5deg);
-    }
-    
-    .animated-underline {
-      position: relative;
-      display: inline-block;
-    }
-    
-    .animated-underline::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 3px;
-      bottom: -5px;
-      left: 0;
-      background-color: #0ea5e9;
-      transform: scaleX(0);
-      transform-origin: bottom right;
-      transition: transform 0.3s ease-out;
-    }
-    
-    .animated-underline:hover::after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-  </style>
+    </script>
+    <style>
+        /* Custom styles */
+        @font-face {
+            font-family: 'Nasalization';
+            src: url('https://raw.githubusercontent.com/prcuisa/beta/main/Nasalization-Rg.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        .logo-text {
+            width: 120px;
+            height: 32px;
+            background-image: url('https://raw.githubusercontent.com/prcuisa/beta/refs/heads/main/PRCUISAA.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+        }
+
+        .dark .logo-text {
+            filter: brightness(0) invert(1);
+        }
+        
+        .logo-img {
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo-light {
+            display: block;
+        }
+        
+        .logo-dark {
+            display: none;
+        }
+        
+        .dark .logo-light {
+            display: none;
+        }
+        
+        .dark .logo-dark {
+            display: block;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background-color: currentColor;
+            vertical-align: middle;
+            transition: opacity 0.3s ease;
+            color: #009AA5;
+        }
+        
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Preloader styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .preloader-logo {
+            width: 100px;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .loaded #preloader {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(0, 154, 165, 0.2);
+            border-radius: 50%;
+            border-top-color: #009AA5;
+            animation: spin 1s linear infinite;
+            margin-top: 10px;
+        }
+        
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .content {
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+        
+        .loaded .content {
+            opacity: 1;
+        }
+        
+        /* Terminal styles */
+        .terminal-line {
+            margin-bottom: 0.5rem;
+        }
+        
+        .terminal-output {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid #374151;
+        }
+        
+        .dark .terminal-output {
+            border-left-color: #d1d5db;
+        }
+        
+        .cursor-blink {
+            animation: blink 1s infinite;
+            display: inline-block;
+            width: 0.5rem;
+            height: 1rem;
+            vertical-align: middle;
+        }
+        
+        .typing {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid white;
+            animation: typing 2s steps(20, end) forwards;
+        }
+        
+        .dark .typing {
+            border-right-color: #111827;
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0
+            }
+            to {
+                width: 100%
+            }
+        }
+
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark .glass {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(to right, #009AA5, #0ea5e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: gradient 3s ease infinite;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #009AA5;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #008a94;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #009AA5;
+        }
+
+        /* Hover card effect */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Blob animation */
+        .blob {
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.7;
+        }
+
+        /* Service card gradient border */
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+            padding: 2px;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(45deg, #009AA5, #0ea5e9, #009AA5);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
+
+        .dark .gradient-border {
+            background: #1f2937;
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
-  <!-- Animated Background Elements -->
-  <div class="fixed inset-0 overflow-hidden -z-50 opacity-10">
-    <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary-400 opacity-20 mix-blend-multiply filter blur-3xl animate-spin-slow"></div>
-    <div class="absolute bottom-1/3 right-1/3 w-80 h-80 rounded-full bg-primary-600 opacity-20 mix-blend-multiply filter blur-3xl animate-spin-slow animation-delay-2000"></div>
-  </div>
 
-  <!-- Navigation -->
-  <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-20 items-center">
-        <a href="#" class="flex items-center space-x-2">
-          <div class="w-10 h-10 rounded-lg bg-primary-600 flex items-center justify-center text-white font-bold text-xl">PR</div>
-          <span class="text-xl font-bold bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">PRCUISA Dev</span>
-        </a>
-        
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="#services" class="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Services</a>
-          <a href="#work" class="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Work</a>
-          <a href="#tech" class="text-gray-700 hover:text-primary-600 transition-colors duration-300 font-medium">Tech Stack</a>
-          <a href="#contact" class="px-4 py-2 bg-gradient-to-r from-primary-500 to-blue-600 text-white rounded-lg hover:shadow-lg transition-all duration-300">Get Started</a>
-        </div>
-        
-        <button id="mobile-menu-button" class="md:hidden text-gray-700">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
-      </div>
+<body class="font-inter antialiased text-gray-800 bg-gray-50 dark:bg-gray-900 loaded">
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="https://raw.githubusercontent.com/prcuisa/tailwind/refs/heads/main/src/public/images/prcuisa.png" alt="PRCUISA Logo" class="preloader-logo">
+        <div class="spinner"></div>
     </div>
-    
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm">
-      <div class="px-2 pt-2 pb-3 space-y-2">
-        <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Services</a>
-        <a href="#work" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Work</a>
-        <a href="#tech" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Tech Stack</a>
-        <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-center text-white bg-gradient-to-r from-primary-500 to-blue-600">Get Started</a>
-      </div>
+
+    <!-- Animated Background Elements -->
+    <div class="fixed inset-0 overflow-hidden -z-10">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary-400 opacity-10 mix-blend-multiply filter blur-3xl animate-spin-slow"></div>
+        <div class="absolute bottom-1/3 right-1/3 w-80 h-80 rounded-full bg-accent-400 opacity-10 mix-blend-multiply filter blur-3xl animate-spin-slow"></div>
+        <div class="absolute top-1/2 right-1/4 w-72 h-72 rounded-full bg-primary-500 opacity-10 mix-blend-multiply filter blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-96 h-96 rounded-full bg-accent-500 opacity-10 mix-blend-multiply filter blur-3xl animate-float-reverse"></div>
     </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero-gradient text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="text-center lg:text-left relative z-10">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Build Your <span class="animated-underline">Digital Presence</span> With Modern Web Solutions
-          </h1>
-          <p class="text-xl text-primary-100 mb-8 max-w-lg">
-            We create fast, responsive, and visually stunning websites that drive results for your business.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="#contact" class="px-8 py-3 bg-white text-primary-700 font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300 text-center">
-              Start Your Project
-            </a>
-            <a href="#work" class="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors duration-300 text-center">
-              View Portfolio
-            </a>
-          </div>
-        </div>
-        
-        <div class="relative">
-          <div class="code-bg rounded-2xl shadow-2xl overflow-hidden p-6">
-            <div class="flex mb-4">
-              <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-              <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
-              <div class="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-            <pre class="text-green-400 text-sm md:text-base overflow-x-auto">
-<code><span class="text-blue-400">import</span> React <span class="text-blue-400">from</span> <span class="text-yellow-300">'react'</span>
-<span class="text-blue-400">import</span> { NextJS, Tailwind, Prisma } <span class="text-blue-400">from</span> <span class="text-yellow-300">'@prcuisa/dev-stack'</span>
+    <!-- Navigation -->
+    <nav class="glass sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 flex items-center justify-center overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/prcuisa/beta/refs/heads/main/logolight.png" alt="PRCUISA Logo" class="logo-img logo-light w-8 h-8 object-contain">
+                        <img src="https://raw.githubusercontent.com/prcuisa/beta/refs/heads/main/logodark.png" alt="PRCUISA Logo" class="logo-img logo-dark w-8 h-8 object-contain">
+                    </div>
+                    <div class="logo-text"></div>
+                </a>
 
-<span class="text-blue-400">const</span> <span class="text-pink-400">AwesomeWebsite</span> = () => (
-  &lt;<span class="text-red-400">div</span> className=<span class="text-yellow-300">"max-w-7xl mx-auto"</span>>
-    &lt;<span class="text-red-400">h1</span>>Your Vision, Our Code&lt;/<span class="text-red-400">h1</span>>
-    &lt;<span class="text-red-400">p</span>>Cutting-edge web solutions&lt;/<span class="text-red-400">p</span>>
-  &lt;/<span class="text-red-400">div</span>>
-)
-
-<span class="text-blue-400">export</span> <span class="text-blue-400">default</span> AwesomeWebsite</code></pre>
-          </div>
-          <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-primary-400/20 animate-float"></div>
-          <div class="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-blue-400/20 animate-float-reverse"></div>
-        </div>
-      </div>
-    </div>
-    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
-  </section>
-
-  <!-- Clients Section -->
-  <section class="py-12 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-center text-sm font-semibold uppercase tracking-wider text-gray-500 mb-8">Trusted by innovative companies</p>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-        <div class="flex justify-center opacity-70 hover:opacity-100 transition-opacity">
-          <img src="https://logo.clearbit.com/google.com" alt="Google" class="h-8">
-        </div>
-        <div class="flex justify-center opacity-70 hover:opacity-100 transition-opacity">
-          <img src="https://logo.clearbit.com/shopify.com" alt="Shopify" class="h-8">
-        </div>
-        <div class="flex justify-center opacity-70 hover:opacity-100 transition-opacity">
-          <img src="https://logo.clearbit.com/spotify.com" alt="Spotify" class="h-8">
-        </div>
-        <div class="flex justify-center opacity-70 hover:opacity-100 transition-opacity">
-          <img src="https://logo.clearbit.com/airbnb.com" alt="Airbnb" class="h-8">
-        </div>
-        <div class="flex justify-center opacity-70 hover:opacity-100 transition-opacity">
-          <img src="https://logo.clearbit.com/slack.com" alt="Slack" class="h-8">
-        </div>
-        <div class="flex justify-center opacity-70 hover:opacity-100 transition-opacity">
-          <img src="https://logo.clearbit.com/netflix.com" alt="Netflix" class="h-8">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary-100 text-primary-800 mb-4">Our Services</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Full-Cycle Web Development</h2>
-        <p class="text-lg text-gray-600 mx-auto">From concept to deployment, we handle every aspect of your digital presence.</p>
-      </div>
-      
-      <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service 1 -->
-        <div class="service-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
-          <div class="h-48 bg-primary-50 flex items-center justify-center relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-blue-500/10"></div>
-            <i class="fas fa-laptop-code text-6xl text-primary-600 animate-pulse-slow"></i>
-            <div class="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-primary-400/20 animate-float"></div>
-          </div>
-          <div class="p-8">
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Custom Web Development</h3>
-            <p class="text-gray-600 mb-6">Tailor-made websites and web applications built with modern technologies for optimal performance.</p>
-            <a href="#" class="text-primary-600 font-medium inline-flex items-center">
-              Learn more <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Service 2 -->
-        <div class="service-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
-          <div class="h-48 bg-primary-50 flex items-center justify-center relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-blue-500/10"></div>
-            <i class="fas fa-mobile-alt text-6xl text-primary-600 animate-wave"></i>
-            <div class="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-blue-400/20 animate-float-reverse"></div>
-          </div>
-          <div class="p-8">
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Responsive Design</h3>
-            <p class="text-gray-600 mb-6">Pixel-perfect designs that work flawlessly on all devices, from desktop to mobile.</p>
-            <a href="#" class="text-primary-600 font-medium inline-flex items-center">
-              Learn more <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Service 3 -->
-        <div class="service-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
-          <div class="h-48 bg-primary-50 flex items-center justify-center relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-blue-500/10"></div>
-            <i class="fas fa-rocket text-6xl text-primary-600 animate-bounce-slow"></i>
-            <div class="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-primary-400/20 animate-float"></div>
-          </div>
-          <div class="p-8">
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Performance Optimization</h3>
-            <p class="text-gray-600 mb-6">Lightning-fast load times and smooth interactions for better user experience and SEO.</p>
-            <a href="#" class="text-primary-600 font-medium inline-flex items-center">
-              Learn more <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Work Section -->
-  <section id="work" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary-100 text-primary-800 mb-4">Our Work</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Recent Projects</h2>
-        <p class="text-lg text-gray-600 mx-auto">Explore some of our latest web development projects.</p>
-      </div>
-      
-      <div class="mt-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project 1 -->
-          <div class="project-card group relative overflow-hidden rounded-xl shadow-lg">
-            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="E-commerce Project" class="w-full h-80 object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white">NovaStore</h3>
-              <p class="text-primary-300 mb-4">E-commerce Platform</p>
-              <p class="text-gray-300 mb-4">Modern online store with payment integration and inventory management.</p>
-              <a href="#" class="mt-2 inline-flex items-center text-white font-medium">
-                View Project <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Project 2 -->
-          <div class="project-card group relative overflow-hidden rounded-xl shadow-lg">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="SaaS Dashboard" class="w-full h-80 object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white">AnalyticsPro</h3>
-              <p class="text-primary-300 mb-4">SaaS Dashboard</p>
-              <p class="text-gray-300 mb-4">Real-time data visualization and reporting platform.</p>
-              <a href="#" class="mt-2 inline-flex items-center text-white font-medium">
-                View Project <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Project 3 -->
-          <div class="project-card group relative overflow-hidden rounded-xl shadow-lg">
-            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Mobile App" class="w-full h-80 object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white">FitTrack</h3>
-              <p class="text-primary-300 mb-4">Health & Fitness App</p>
-              <p class="text-gray-300 mb-4">Cross-platform mobile application with wearable integration.</p>
-              <a href="#" class="mt-2 inline-flex items-center text-white font-medium">
-                View Project <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="mt-12 text-center">
-          <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-primary-400 hover:text-primary-600 transition-colors duration-300">
-            View All Projects
-            <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tech Stack Section -->
-  <section id="tech" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary-100 text-primary-800 mb-4">Our Tech Stack</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Modern Technologies We Use</h2>
-        <p class="text-lg text-gray-600 mx-auto">We leverage cutting-edge tools to build fast, scalable, and secure web applications.</p>
-      </div>
-      
-      <div class="mt-16">
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
-          <!-- Tech 1 -->
-          <div class="tech-icon bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="h-16 w-16">
-            <span class="mt-4 font-medium text-gray-700">Next.js</span>
-          </div>
-          
-          <!-- Tech 2 -->
-          <div class="tech-icon bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="h-16 w-16">
-            <span class="mt-4 font-medium text-gray-700">React</span>
-          </div>
-          
-          <!-- Tech 3 -->
-          <div class="tech-icon bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS" class="h-16 w-16">
-            <span class="mt-4 font-medium text-gray-700">Tailwind</span>
-          </div>
-          
-          <!-- Tech 4 -->
-          <div class="tech-icon bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="h-16 w-16">
-            <span class="mt-4 font-medium text-gray-700">TypeScript</span>
-          </div>
-          
-          <!-- Tech 5 -->
-          <div class="tech-icon bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="h-16 w-16">
-            <span class="mt-4 font-medium text-gray-700">Node.js</span>
-          </div>
-          
-          <!-- Tech 6 -->
-          <div class="tech-icon bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" alt="Prisma" class="h-16 w-16">
-            <span class="mt-4 font-medium text-gray-700">Prisma</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-r from-primary-600 to-blue-600 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Ready to Build Something Amazing?</h2>
-      <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">Let's discuss your project and how we can bring your vision to life with cutting-edge web technology.</p>
-      <a href="#contact" class="inline-flex items-center px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300">
-        Get Started
-        <i class="fas fa-arrow-right ml-2"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary-100 text-primary-800 mb-4">Contact Us</span>
-          <h2 class="text-3xl font-bold text-gray-900 mb-6">Let's Work Together</h2>
-          <p class="text-lg text-gray-600 mb-8">Have a project in mind or want to learn more about our services? Fill out the form and we'll get back to you within 24 hours.</p>
-          
-          <div class="space-y-6">
-            <div class="flex items-start">
-              <div class="flex-shrink-0">
-                <div class="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center">
-                  <i class="fas fa-envelope text-primary-600"></i>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-300 font-medium">Services</a>
+                    <a href="#work" class="text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-300 font-medium">Our Work</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-300 font-medium">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-300 font-medium">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-lg focus:outline-none">
+                        <i class="fas fa-sun text-yellow-400"></i>
+                    </button>
+                    <a href="#" class="px-4 py-2 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white hover:shadow-lg transition-all duration-300">Get Started</a>
                 </div>
-              </div>
-              <div class="ml-4">
-                <h3 class="text-lg font-medium text-gray-900">Email Us</h3>
-                <p class="text-gray-600">dev@prcuisa.com</p>
-              </div>
+
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
-            
-            <div class="flex items-start">
-              <div class="flex-shrink-0">
-                <div class="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center">
-                  <i class="fas fa-phone-alt text-primary-600"></i>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass">
+            <div class="px-2 pt-2 pb-3 space-y-2">
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800">Services</a>
+                <a href="#work" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800">Our Work</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800">Contact</a>
+                <button id="mobile-theme-toggle" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 w-full text-left">
+                    <i class="fas fa-sun mr-2 text-yellow-400"></i> Toggle Light Mode
+                </button>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-center text-white bg-gradient-to-r from-primary-500 to-accent-500">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm font-medium mb-6">
+                        <span class="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></span>
+                        Innovating Digital Solutions Since 2015
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight dark:text-white">
+                        <span class="gradient-text">
+                            <span id="typing-text">Empower Gr</span><span class="typing-cursor" style="animation: 0.7s ease 0s infinite normal none running blink;"></span>
+                        </span><br> For Every Vision
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-lg">
+                      We combine creativity, technology, and strategy to turn ideas into digital solutions that work anywhere in the world.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contact" class="px-8 py-3 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white hover:shadow-lg hover:shadow-primary-100 transition-all duration-300 text-center font-medium">
+                            Get in Touch
+                        </a>
+                        <a href="#services" class="px-8 py-3 rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 text-center font-medium">
+                            Explore Services
+                        </a>
+                    </div>
+
+                    <div class="mt-12 flex items-center justify-center lg:justify-start space-x-6">
+                        <div class="flex items-center">
+                            <div class="flex -space-x-2">
+                                <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://randomuser.me/api/portraits/women/12.jpg" alt="">
+                                <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                                <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800" src="https://randomuser.me/api/portraits/women/45.jpg" alt="">
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Trusted by 100+ clients</p>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span class="ml-1 text-sm text-gray-600 dark:text-gray-400">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="ml-4">
-                <h3 class="text-lg font-medium text-gray-900">Call Us</h3>
-                <p class="text-gray-600">+62 123 4567 893</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start">
-              <div class="flex-shrink-0">
-                <div class="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center">
-                  <i class="fas fa-map-marker-alt text-primary-600"></i>
+
+                <!-- Enhanced Terminal Component -->
+                <div class="relative bg-gray-900 dark:bg-gray-100 rounded-2xl overflow-hidden shadow-2xl mt-12 border border-gray-700 dark:border-gray-300 card-hover">
+                    <!-- Terminal Header -->
+                    <div class="flex items-center bg-gray-800 dark:bg-gray-200 px-4 py-3 border-b border-gray-700 dark:border-gray-300">
+                        <div class="flex space-x-2 mr-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500 hover:bg-red-400 cursor-pointer"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-400 cursor-pointer"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500 hover:bg-green-400 cursor-pointer"></div>
+                        </div>
+                        <div class="text-gray-400 dark:text-gray-600 text-sm font-mono flex-1 text-center">user@prcuisa: ~/tech-stack</div>
+                    </div>
+
+                    <!-- Terminal Body -->
+                    <div class="p-4 font-mono text-sm bg-gray-900 dark:bg-white text-gray-100 dark:text-gray-900" id="terminal-body">
+                        <!-- Initial commands -->
+                        <div class="terminal-line">
+                            <span class="text-green-400 dark:text-green-600">user@prcuisa</span><span class="text-white dark:text-gray-900">:</span><span class="text-blue-400 dark:text-blue-600">~/tech-stack</span><span class="text-white dark:text-gray-900">$</span>
+                            <span class="typing" data-text="ls -la"></span>
+                        </div>
+
+                        <div class="terminal-output">
+                            <div class="text-yellow-400 dark:text-yellow-600">total 12</div>
+                            <div>drwxr-xr-x 3 user user 4096 Jul 27 14:30 <span class="text-blue-400 dark:text-blue-600">.</span></div>
+                            <div>drwxr-xr-x 5 user user 4096 Jul 27 14:30 <span class="text-blue-400 dark:text-blue-600">..</span></div>
+                            <div>-rw-r--r-- 1 user user 4096 Jul 27 14:30 <span class="text-green-400 dark:text-green-600">tech-stack.md</span></div>
+                        </div>
+
+                        <div class="terminal-line">
+                            <span class="text-green-400 dark:text-green-600">user@prcuisa</span><span class="text-white dark:text-gray-900">:</span><span class="text-blue-400 dark:text-blue-600">~/tech-stack</span><span class="text-white dark:text-gray-900">$</span>
+                            <span class="typing" data-text="cat tech-stack.md"></span>
+                        </div>
+
+                        <!-- Tech Stack Content -->
+                        <div class="terminal-output" id="tech-stack">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <!-- Frontend -->
+                                <div>
+                                    <div class="text-purple-400 dark:text-purple-600 mb-2"># FRONTEND</div>
+                                    <div class="flex items-center mb-1">
+                                        <div class="w-4 h-4 bg-blue-500 mr-2 rounded-sm"></div>
+                                        <span>Tailwind CSS</span>
+                                    </div>
+                                    <div class="flex items-center mb-1">
+                                        <div class="w-4 h-4 bg-yellow-500 mr-2 rounded-sm"></div>
+                                        <span>JavaScript (ES6+)</span>
+                                    </div>
+                                    <div class="flex items-center mb-1">
+                                        <div class="w-4 h-4 bg-red-500 mr-2 rounded-sm"></div>
+                                        <span>Font Awesome</span>
+                                    </div>
+                                </div>
+
+                                <!-- Backend -->
+                                <div>
+                                    <div class="text-purple-400 dark:text-purple-600 mb-2"># BACKEND</div>
+                                    <div class="flex items-center mb-1">
+                                        <div class="w-4 h-4 bg-green-500 mr-2 rounded-sm"></div>
+                                        <span>Node.js</span>
+                                    </div>
+                                    <div class="flex items-center mb-1">
+                                        <div class="w-4 h-4 bg-blue-400 mr-2 rounded-sm"></div>
+                                        <span>Express</span>
+                                    </div>
+                                </div>
+
+                                <!-- Tools -->
+                                <div class="md:col-span-2">
+                                    <div class="text-purple-400 dark:text-purple-600 mb-2"># TOOLS & SERVICES</div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-gray-800 dark:bg-gray-200 rounded text-xs">Vercel</span>
+                                        <span class="px-2 py-1 bg-gray-800 dark:bg-gray-200 rounded text-xs">Git</span>
+                                        <span class="px-2 py-1 bg-gray-800 dark:bg-gray-200 rounded text-xs">Figma</span>
+                                        <span class="px-2 py-1 bg-gray-800 dark:bg-gray-200 rounded text-xs">Adobe Creative Suite</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Prompt -->
+                        <div class="terminal-line" id="prompt">
+                            <span class="text-green-400 dark:text-green-600">user@prcuisa</span><span class="text-white dark:text-gray-900">:</span><span class="text-blue-400 dark:text-blue-600">~/tech-stack</span><span class="text-white dark:text-gray-900">$</span>
+                            <span class="cursor-blink bg-gray-100 dark:bg-gray-900">█</span>
+                        </div>
+                    </div>
+
+                    <!-- Terminal Footer -->
+                    <div class="bg-gray-800 dark:bg-gray-200 px-4 py-2 border-t border-gray-700 dark:border-gray-300 text-xs text-gray-500 dark:text-gray-600 flex justify-between">
+                        <div>Press <span class="bg-gray-700 dark:bg-gray-300 px-1 rounded">Enter</span> to continue</div>
+                        <div>PRCUISA v1.0.0</div>
+                    </div>
                 </div>
-              </div>
-              <div class="ml-4">
-                <h3 class="text-lg font-medium text-gray-900">Visit Us</h3>
-                <p class="text-gray-600">Jl. Digital No. 88, Jakarta, Indonesia</p>
-              </div>
             </div>
-          </div>
         </div>
-        
-        <div class="bg-gray-50 p-8 sm:p-10 rounded-xl shadow-md">
-          <form class="space-y-6">
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-              <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition">
-            </div>
-            
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-              <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition">
-            </div>
-            
-            <div>
-              <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interested In</label>
-              <select id="service" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition">
-                <option>Select a service</option>
-                <option>Custom Web Development</option>
-                <option>E-commerce Website</option>
-                <option>Web Application</option>
-                <option>Website Redesign</option>
-                <option>Other</option>
-              </select>
-            </div>
-            
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
-              <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"></textarea>
-            </div>
-            
-            <div>
-              <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg transition-all duration-300">
-                Send Message
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
-        <div class="lg:col-span-2">
-          <a href="#" class="flex items-center space-x-2 mb-6">
-            <div class="w-10 h-10 rounded-lg bg-primary-600 flex items-center justify-center text-white font-bold text-xl">PR</div>
-            <span class="text-xl font-bold bg-gradient-to-r from-primary-400 to-blue-400 bg-clip-text text-transparent">PRCUISA Dev</span>
-          </a>
-          <p class="text-gray-400 mb-6">Cutting-edge web development solutions for businesses and startups.</p>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-              <i class="fab fa-github text-xl"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-              <i class="fab fa-twitter text-xl"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-              <i class="fab fa-linkedin-in text-xl"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-              <i class="fab fa-dribbble text-xl"></i>
-            </a>
-          </div>
-        </div>
-        
-        <div>
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Services</h3>
-          <ul class="space-y-3">
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">UI/UX Design</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">E-commerce</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Web Apps</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Company</h3>
-          <ul class="space-y-3">
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
-            <li><a href="#work" class="text-gray-400 hover:text-white transition-colors duration-300">Portfolio</a></li>
-            <li><a href="#tech" class="text-gray-400 hover:text-white transition-colors duration-300">Tech Stack</a></li>
-            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Legal</h3>
-          <ul class="space-y-3">
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cookie Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-400 text-sm">
-          &copy; 2023 PRCUISA Dev. All rights reserved.
-        </p>
-        <div class="mt-4 md:mt-0">
-          <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
-          <span class="mx-2 text-gray-600">•</span>
-          <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 mb-4">Our Services</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-6">Comprehensive Digital Solutions</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">We offer end-to-end services to bring your digital vision to life, from creative content to cutting-edge technology implementations.</p>
+            </div>
 
-  <!-- Scripts -->
-  <script>
-    // Mobile menu toggle
-    document.getElementById('mobile-menu-button').addEventListener('click', function() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    });
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Art Service -->
+                <div class="gradient-border card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden p-8 h-full flex flex-col">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center mb-6">
+                            <i class="fas fa-pencil-ruler text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">PRCUISArt</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">Professional UI/UX design services that create intuitive and beautiful digital experiences.</p>
+                        <div class="mt-auto">
+                            <a href="/comingsoon" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium transition-colors duration-300">
+                                Explore Design
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-    // Animated underline for navigation
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      link.addEventListener('mouseenter', function() {
-        this.classList.add('animated-underline');
-      });
-      link.addEventListener('mouseleave', function() {
-        this.classList.remove('animated-underline');
-      });
-    });
-  </script>
+                <!-- Build Service -->
+                <div class="gradient-border card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden p-8 h-full flex flex-col">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center mb-6">
+                            <i class="fas fa-desktop text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">BuildWithPrcuisa</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">Custom PC builds and workstations tailored to your specific needs.</p>
+                        <div class="mt-auto">
+                            <a href="/comingsoon" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium transition-colors duration-300">
+                                Explore Builds
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dev Service -->
+                <div class="gradient-border card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden p-8 h-full flex flex-col">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center mb-6">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">PRCUISA WEB</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">Custom web development and digital experiences that drive results.</p>
+                        <div class="mt-auto">
+                            <a href="/comingsoon" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium transition-colors duration-300">
+                                Explore Dev
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IoT Service -->
+                <div class="gradient-border card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden p-8 h-full flex flex-col">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center mb-6">
+                            <i class="fas fa-microchip text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">PRCUISA IoT</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">Smart IoT solutions for home automation and business applications.</p>
+                        <div class="mt-auto">
+                            <a href="/comingsoon" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium transition-colors duration-300">
+                                Explore IoT
+                                <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Showcase Section -->
+    <section id="work" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 mb-4">Our Portfolio</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-6">Featured Projects</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">Explore some of our recent work across different service categories.</p>
+            </div>
+
+            <div class="mt-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg card-hover">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Dashboard Design" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6">
+                            <span class="text-sm text-primary-300 font-medium">Dashboard UI</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Analytics Dashboard</h3>
+                            <p class="text-gray-300 mt-2">Complex data visualization with intuitive navigation</p>
+                            <a href="#" class="mt-4 inline-flex items-center text-white font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                View Case Study
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg card-hover">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="PC Build Project" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6">
+                            <span class="text-sm text-primary-300 font-medium">Custom PC</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Gaming Beast Setup</h3>
+                            <p class="text-gray-300 mt-2">High-end gaming PC with RGB customization</p>
+                            <a href="#" class="mt-4 inline-flex items-center text-white font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                View Project
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg card-hover">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Web Development Project" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6">
+                            <span class="text-sm text-primary-300 font-medium">Web Development</span>
+                            <h3 class="text-xl font-bold text-white mt-1">E-commerce Platform</h3>
+                            <p class="text-gray-300 mt-2">Custom online store with payment integration</p>
+                            <a href="#" class="mt-4 inline-flex items-center text-white font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                View Project
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="#" class="inline-flex items-center px-6 py-3 rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300">
+                        View All Projects
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Our Team" class="w-full h-auto">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-primary-400/20 animate-float"></div>
+                    <div class="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-accent-400/20 animate-float-reverse"></div>
+                </div>
+                <div>
+                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 mb-4">About Us</span>
+                    <h2 class="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-6">Innovative Digital Solutions Provider</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                        Founded in 2015, PRCUISA has grown from a small creative studio to a full-service digital solutions provider. Our team of passionate creatives, developers, and technologists work together to deliver exceptional results for our clients.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+                                    <i class="fas fa-check text-primary-600 dark:text-primary-400"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Our Mission</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">To bridge creativity with technology, delivering innovative solutions that drive real business results.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+                                    <i class="fas fa-check text-primary-600 dark:text-primary-400"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Our Approach</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">We combine strategic thinking with technical excellence to create solutions tailored to your unique needs.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+                                    <i class="fas fa-check text-primary-600 dark:text-primary-400"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Our Promise</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">Quality, reliability, and ongoing support to ensure your digital success.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="#contact" class="px-6 py-3 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white hover:shadow-lg hover:shadow-primary-100 transition-all duration-300 inline-flex items-center">
+                            Learn More About Us
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 mb-4">Our Team</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-6">Meet Our Founder</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">The visionary behind our success story.</p>
+            </div>
+
+            <div class="mt-16 flex justify-center">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-4xl w-full card-hover">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/3">
+                            <img src="https://raw.githubusercontent.com/prcuisa/beta/refs/heads/main/ecsa.jpg" alt="Ecsa Ahcri Pracasa" class="w-full h-64 md:h-full object-cover">
+                        </div>
+                        <div class="md:w-2/3 p-8">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Ecsa Ahcri Pracasa</h3>
+                            <p class="text-primary-600 dark:text-primary-400 mt-1 text-lg">Founder & CEO</p>
+                            <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg">Visionary leader with 15+ years in digital innovation. Passionate about creating solutions that make a difference.</p>
+                            <div class="mt-6 flex space-x-4">
+                                <a href="https://www.linkedin.com/in/denecsa/" class="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://www.instagram.com/denecsa/" class="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 mb-4">Contact Us</span>
+                    <h2 class="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-6">Let's Build Something Amazing Together</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                        Ready to take your digital presence to the next level? Get in touch with our team to discuss your project.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Our Office</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">Jakarta, Indonesia</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Email Us</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">prcuisa@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://instagram.com/prcuisa" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://t.me/prcuisa" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send Us a Message</h3>
+                    <form id="contact-form" action="https://formspree.io/f/xblzdoew" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition-all duration-300" placeholder="John Doe" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition-all duration-300" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition-all duration-300" placeholder="How can we help?" required>
+                        </div>
+                        <div class="mt-6">
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition-all duration-300" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <div class="mt-8">
+                            <button type="submit" class="w-full px-6 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-medium hover:shadow-lg hover:shadow-primary-100 transition-all duration-300">
+                                Send Message
+                                <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </div>
+                        <div id="form-status" class="mt-4 text-center hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <div class="col-span-2">
+                    <a href="#" class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 flex items-center justify-center overflow-hidden">
+                            <img src="https://raw.githubusercontent.com/prcuisa/beta/refs/heads/main/logodark.png" alt="PRCUISA Logo" class="logo-img logo-light w-8 h-8 object-contain">
+                            <img src="https://raw.githubusercontent.com/prcuisa/beta/refs/heads/main/logodark.png" alt="PRCUISA Logo" class="logo-img logo-dark w-8 h-8 object-contain">
+                        </div>
+                        <div class="logo-text"></div>
+                    </a>
+                    <p class="text-gray-400 mb-6">
+                        We combine creativity, technology, and strategy to turn ideas into digital solutions that work anywhere in the world.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Custom PC Builds</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">IoT Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Our Team</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Prcuisa Labs. All Rights Reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-primary-400 text-sm transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-primary-400 text-sm transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-primary-400 text-sm transition-colors duration-300">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700 transition-colors duration-300 hidden items-center justify-center z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Preloader
+        document.addEventListener('DOMContentLoaded', function() {
+            const preloader = document.getElementById('preloader');
+            preloader.style.display = 'flex';
+
+            setTimeout(function() {
+                document.body.classList.add('loaded');
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1500);
+
+            // Dark mode toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+            const html = document.documentElement;
+
+            // Check for saved theme preference or use system preference
+            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (savedTheme === 'dark') {
+                html.classList.add('dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun text-yellow-400"></i>';
+                mobileThemeToggle.innerHTML = '<i class="fas fa-sun mr-2 text-yellow-400"></i> Toggle Light Mode';
+            }
+
+            themeToggle.addEventListener('click', function() {
+                html.classList.toggle('dark');
+                const isDark = html.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                themeToggle.innerHTML = isDark ? '<i class="fas fa-sun text-yellow-400"></i>' : '<i class="fas fa-moon text-gray-700"></i>';
+                mobileThemeToggle.innerHTML = isDark ? '<i class="fas fa-sun mr-2 text-yellow-400"></i> Toggle Light Mode' : '<i class="fas fa-moon mr-2"></i> Toggle Dark Mode';
+            });
+
+            mobileThemeToggle.addEventListener('click', function() {
+                html.classList.toggle('dark');
+                const isDark = html.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                themeToggle.innerHTML = isDark ? '<i class="fas fa-sun text-yellow-400"></i>' : '<i class="fas fa-moon text-gray-700"></i>';
+                mobileThemeToggle.innerHTML = isDark ? '<i class="fas fa-sun mr-2 text-yellow-400"></i> Toggle Light Mode' : '<i class="fas fa-moon mr-2"></i> Toggle Dark Mode';
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.innerHTML = mobileMenu.classList.contains('hidden') ? '<i class="fas fa-bars text-2xl"></i>' : '<i class="fas fa-times text-2xl"></i>';
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+                });
+            });
+
+            // Typing animation
+            const typingText = document.getElementById('typing-text');
+            const typingCursor = document.querySelector('.typing-cursor');
+            const words = ['Build Anything', 'Empower Growth', 'Simplify Technology'];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let isEnd = false;
+
+            function type() {
+                const currentWord = words[wordIndex];
+                const currentChar = currentWord.substring(0, charIndex);
+                typingText.textContent = currentChar;
+                typingCursor.style.animation = 'none';
+                setTimeout(() => {
+                    typingCursor.style.animation = 'blink 0.7s infinite';
+                }, 10);
+
+                if (!isDeleting && charIndex < currentWord.length) {
+                    // Typing
+                    charIndex++;
+                    setTimeout(type, 100);
+                } else if (isDeleting && charIndex > 0) {
+                    // Deleting
+                    charIndex--;
+                    setTimeout(type, 50);
+                } else {
+                    // Change word
+                    isDeleting = !isDeleting;
+                    wordIndex = (!isDeleting && wordIndex === words.length - 1) ? 0 : (!isDeleting ? wordIndex + 1 : wordIndex);
+                    setTimeout(type, 1000);
+                }
+            }
+
+            // Start typing animation
+            setTimeout(type, 1000);
+
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('hidden');
+                } else {
+                    backToTopButton.classList.add('hidden');
+                }
+            });
+
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Contact form handling
+            const contactForm = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+                
+                // Show loading state
+                submitButton.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin ml-2"></i>';
+                submitButton.disabled = true;
+                
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        formStatus.innerHTML = '<div class="text-green-600 bg-green-100 p-3 rounded-lg">Thank you for your message! We will get back to you soon.</div>';
+                        formStatus.classList.remove('hidden');
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    formStatus.innerHTML = '<div class="text-red-600 bg-red-100 p-3 rounded-lg">Sorry, there was an error sending your message. Please try again later or contact us directly at prcuisa@gmail.com.</div>';
+                    formStatus.classList.remove('hidden');
+                } finally {
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
+                    
+                    // Hide status message after 5 seconds
+                    setTimeout(() => {
+                        formStatus.classList.add('hidden');
+                    }, 5000);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
