@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Livin' Link Generator • Bulk Power</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #f0f4ff 0%, #e6edfe 100%);
+            min-height: 100vh;
+            padding: 28px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-container {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .card {
+            width: 100%;
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: blur(12px);
+            border-radius: 44px;
+            box-shadow: 0 30px 55px -15px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.7) inset;
+            padding: 32px 36px;
+            transition: all 0.2s;
+        }
+
+        /* Header */
+        .card-header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .card-header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #172554, #2e4783);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card-header h1 i {
+            background: none;
+            -webkit-text-fill-color: #2e4783;
+            font-size: 2rem;
+        }
+
+        .card-header p {
+            color: #2c3f6e;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+
+        .badge-bulk {
+            background: #eef2ff;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+            color: #1e3a8a;
+            border: 1px solid #cbdffc;
+        }
+
+        /* dua kolom mode */
+        .mode-tabs {
+            display: flex;
+            gap: 14px;
+            background: #eef3ff;
+            border-radius: 100px;
+            padding: 6px;
+            margin-bottom: 32px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mode-btn {
+            padding: 10px 28px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #2c3e66;
+        }
+
+        .mode-btn.active {
+            background: white;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+            color: #1f3a7a;
+            border: 0.5px solid #cedcff;
+        }
+
+        /* panel */
+        .panel {
+            display: none;
+            animation: fade 0.2s ease;
+        }
+
+        .panel.active-panel {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(6px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        .input-group {
+            margin-bottom: 24px;
+        }
+
+        .input-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: #1f2a4a;
+            margin-bottom: 10px;
+        }
+
+        .input-field, .bulk-textarea {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 0.95rem;
+            font-family: 'Inter', monospace;
+            background: #ffffff;
+            border: 2px solid #e0e7ff;
+            border-radius: 28px;
+            outline: none;
+            transition: all 0.2s;
+            color: #0f172a;
+            font-weight: 500;
+            resize: vertical;
+        }
+
+        .bulk-textarea {
+            font-family: 'Inter', monospace;
+            min-height: 160px;
+            line-height: 1.5;
+        }
+
+        .input-field:focus, .bulk-textarea:focus {
+            border-color: #4f6fcf;
+            box-shadow: 0 8px 20px -10px #2e4a9e50;
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(115deg, #253c70, #3e5cad);
+            border: none;
+            border-radius: 44px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            box-shadow: 0 12px 24px -12px #1f3a7a80;
+            transition: 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .generate-btn:hover {
+            transform: scale(1.01);
+            background: linear-gradient(115deg, #2a4080, #4663b8);
+            box-shadow: 0 16px 28px -12px #1f3a7a;
+        }
+
+        /* result list bulk */
+        .bulk-results-container {
+            background: #f8faff;
+            border-radius: 32px;
+            padding: 8px;
+            border: 1px solid #e9efff;
+            max-height: 480px;
+            overflow-y: auto;
+        }
+
+        .result-bulk-item {
+            background: white;
+            border-radius: 24px;
+            padding: 18px;
+            margin-bottom: 14px;
+            border: 1px solid #e3ebff;
+            transition: all 0.1s;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: baseline;
+            margin-bottom: 12px;
+            gap: 8px;
+            border-bottom: 1px dashed #dce5ff;
+            padding-bottom: 8px;
+        }
+
+        .item-badge {
+            font-size: 0.75rem;
+            background: #eef3ff;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-family: monospace;
+            color: #1f4590;
+        }
+
+        .item-link {
+            font-family: 'Inter', monospace;
+            font-size: 0.8rem;
+            word-break: break-all;
+            background: #f4f7fe;
+            padding: 12px;
+            border-radius: 20px;
+            color: #0b2b5c;
+            margin: 8px 0;
+            border: 1px solid #e7edff;
+        }
+
+        .copy-single-btn {
+            background: #1f3a70;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 36px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+
+        .copy-single-btn:hover {
+            background: #122d5a;
+        }
+
+        .bulk-footer-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: flex-end;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+
+        .secondary-btn {
+            background: #eef2ff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 34px;
+            font-weight: 600;
+            color: #1f3f8a;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+        }
+
+        .pattern-note {
+            background: #e5edff;
+            border-radius: 28px;
+            padding: 18px 24px;
+            margin-top: 28px;
+            font-size: 0.8rem;
+            border: 1px solid #fff;
+            color: #172c5c;
+        }
+
+        .pattern-note code {
+            background: #ffffffb3;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-top: 6px;
+            word-break: break-all;
+        }
+
+        /* FOOTER BARU dengan gaya premium */
+        .custom-footer {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(79, 111, 207, 0.2);
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #3c5090;
+            letter-spacing: 0.3px;
+        }
+
+        .custom-footer .footer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .custom-footer i {
+            color: #4f6fcf;
+            font-size: 0.9rem;
+        }
+
+        .custom-footer a {
+            color: #2c3f7a;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .custom-footer a:hover {
+            color: #1f3f9e;
+            text-decoration: underline;
+        }
+
+        .footer-small {
+            text-align: center;
+            margin-top: 16px;
+            color: #5470a5;
+            font-weight: 500;
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 680px) {
+            .card {
+                padding: 24px 20px;
+            }
+            .card-header h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e293b;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            z-index: 999;
+            opacity: 0;
+            transition: 0.2s;
+            pointer-events: none;
+            backdrop-filter: blur(8px);
+            background: #0f172ad9;
+        }
+    </style>
+</head>
+<body>
+<div class="main-container">
+    <div class="card">
+        <div class="card-header">
+            <h1><i class="fas fa-layer-group"></i> Livin' OneLink · Bulk Forge</h1>
+            <p>Generate massal link dari banyak MPID & C dalam satu klik</p>
+            <div class="badge-bulk"><i class="fas fa-bolt"></i> Bulk mode: baris per baris (MPID,C)</div>
+        </div>
+
+        <!-- Pilih mode: Single atau Bulk -->
+        <div class="mode-tabs">
+            <button class="mode-btn" data-mode="single" id="singleModeBtn"><i class="fas fa-pen-alt"></i> Single Generator</button>
+            <button class="mode-btn active" data-mode="bulk" id="bulkModeBtn"><i class="fas fa-list-ul"></i> Bulk Generator (CSV style)</button>
+        </div>
+
+        <!-- PANEL SINGLE (tetap dipertahankan tapi dengan sentuhan modern) -->
+        <div class="panel" id="singlePanel">
+            <div class="input-group">
+                <div class="input-label"><i class="fas fa-fingerprint"></i> MPID (angka)</div>
+                <input type="text" class="input-field" id="singleMpid" placeholder="contoh: 3486010174901633" value="3486010174901633">
+            </div>
+            <div class="input-group">
+                <div class="input-label"><i class="fas fa-tag"></i> Parameter C</div>
+                <input type="text" class="input-field" id="singleC" placeholder="misal: sukhawhoosh" value="sukhawhoosh">
+            </div>
+            <button class="generate-btn" id="singleGenerateBtn"><i class="fas fa-wand-magic-sparkles"></i> Generate Link</button>
+            <div class="result-area" id="singleResultArea" style="display: none;">
+                <div class="result-header"><span><i class="fas fa-link"></i> Generated Link</span></div>
+                <div class="result-link" id="singleResultLink">-</div>
+            </div>
+            <button class="copy-btn" id="singleCopyBtn" style="display: none; background:#2f4b8a; border:none; color:white; padding:14px; border-radius:40px; width:100%; margin-top:8px;"><i class="far fa-copy"></i> Salin ke clipboard</button>
+        </div>
+
+        <!-- PANEL BULK (dengan fitur utama) -->
+        <div class="panel active-panel" id="bulkPanel">
+            <div class="input-group">
+                <div class="input-label"><i class="fas fa-table-list"></i> Data Bulk (format: MPID,C)</div>
+                <textarea class="bulk-textarea" id="bulkData" placeholder="Setiap baris berisi MPID dan C dipisah koma (tanpa spasi berlebih)&#10;contoh:&#10;3486010174901633,sukhawhoosh&#10;1234567890123456,eventramadhan&#10;9876543210987654,promoagen"></textarea>
+            </div>
+            <button class="generate-btn" id="bulkGenerateBtn"><i class="fas fa-cogs"></i> Generate Semua Link (Bulk)</button>
+            
+            <!-- area hasil bulk -->
+            <div id="bulkResultWrapper" style="margin-top: 6px;"></div>
+            <div class="bulk-footer-actions" id="bulkActionButtons" style="display: none;">
+                <button class="secondary-btn" id="copyAllLinksBtn"><i class="far fa-copy"></i> Salin Semua Link (teks)</button>
+                <button class="secondary-btn" id="clearBulkResultsBtn"><i class="fas fa-trash-alt"></i> Bersihkan Hasil</button>
+            </div>
+        </div>
+
+        <!-- Pattern Note -->
+        <div class="pattern-note">
+            <i class="fas fa-code-branch"></i> <strong>Pattern generator (otomatis)</strong>
+            <code>https://livinapp.onelink.me/kNH6?af_xp=text&amp;pid=Sukha&amp;af_dp=livinapp%3A%2F%2F&amp;deep_link_value=feature&amp;deep_link_sub1=944eb48e-f7cd-4a50-bf4a-b035028fdc52&amp;c={C}&amp;deep_link_sub2=mini%253A%252F%252Fplatformapi%252Fstartapp%253F_ariver_appid%253D{MPID}&amp;deep_link_sub3=mini%253A%252F%252Fplatformapi%252Fstartapp%253F_ariver_appid%253D{MPID}</code>
+        </div>
+        
+        <!-- FOOTER PREMIUM sesuai permintaan: © 2026 · Design and Develop by Prcuisa Labs — Ecsa Ahcri Pracasa -->
+        <div class="custom-footer">
+            <div class="footer-brand">
+                <i class="fas fa-crown"></i>
+                <span>© 2026 · Design and Develop by <strong>Prcuisa Labs</strong> — Ecsa Ahcri Pracasa</span>
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="footer-small" style="margin-top: 8px;">
+                ⚡ Bulk mode: support ratusan baris. Setiap item bisa dicopy satu-satu atau semua link sekaligus.
+            </div>
+        </div>
+    </div>
+</div>
+<div id="toastMsg" class="toast-msg"></div>
+
+<script>
+    // ---------- BASE PATTERN ----------
+    const BASE_PATTERN = "https://livinapp.onelink.me/kNH6?af_xp=text&pid=Sukha&af_dp=livinapp%3A%2F%2F&deep_link_value=feature&deep_link_sub1=944eb48e-f7cd-4a50-bf4a-b035028fdc52&c={C}&deep_link_sub2=mini%253A%252F%252Fplatformapi%252Fstartapp%253F_ariver_appid%253D{MPID}&deep_link_sub3=mini%253A%252F%252Fplatformapi%252Fstartapp%253F_ariver_appid%253D{MPID}";
+
+    function buildLink(mpid, cVal) {
+        let link = BASE_PATTERN.replace(/{MPID}/g, String(mpid).trim());
+        link = link.replace(/{C}/g, String(cVal).trim());
+        return link;
+    }
+
+    // Helper notifikasi
+    function showToast(msg, isError = false) {
+        const toast = document.getElementById('toastMsg');
+        toast.textContent = msg;
+        toast.style.backgroundColor = isError ? '#b91c1cd9' : '#0f172ad9';
+        toast.style.opacity = '1';
+        setTimeout(() => {
+            toast.style.opacity = '0';
+        }, 2500);
+    }
+
+    // =============== SINGLE MODE LOGIC (tetap ada) ===============
+    const singleMpid = document.getElementById('singleMpid');
+    const singleC = document.getElementById('singleC');
+    const singleGenerateBtn = document.getElementById('singleGenerateBtn');
+    const singleResultArea = document.getElementById('singleResultArea');
+    const singleResultLink = document.getElementById('singleResultLink');
+    const singleCopyBtn = document.getElementById('singleCopyBtn');
+
+    function generateSingle() {
+        let mpid = singleMpid.value.trim();
+        let cVal = singleC.value.trim();
+        if (!mpid) { showToast('MPID tidak boleh kosong!', true); return; }
+        if (!cVal) { showToast('Parameter C tidak boleh kosong!', true); return; }
+        if (!/^\d+$/.test(mpid)) showToast('⚠️ MPID sebaiknya hanya angka, link tetap dibuat.', false);
+        if (/[&=?#\s]/.test(cVal)) showToast('⚠️ Nilai C mengandung karakter khusus, bisa bermasalah.', true);
+        const link = buildLink(mpid, cVal);
+        singleResultLink.textContent = link;
+        singleResultArea.style.display = 'block';
+        singleCopyBtn.style.display = 'flex';
+    }
+
+    singleGenerateBtn.addEventListener('click', generateSingle);
+    singleCopyBtn.addEventListener('click', () => {
+        const linkText = singleResultLink.textContent;
+        if (!linkText || linkText === '-') return;
+        navigator.clipboard.writeText(linkText).then(() => {
+            showToast('✅ Link tersalin!');
+            const original = singleCopyBtn.innerHTML;
+            singleCopyBtn.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
+            setTimeout(() => { singleCopyBtn.innerHTML = original; }, 1500);
+        }).catch(() => showToast('Gagal menyalin', true));
+    });
+
+    // =============== BULK MODE CORE ===============
+    const bulkDataTextarea = document.getElementById('bulkData');
+    const bulkGenerateBtn = document.getElementById('bulkGenerateBtn');
+    const bulkResultWrapper = document.getElementById('bulkResultWrapper');
+    const bulkActionButtons = document.getElementById('bulkActionButtons');
+    let currentBulkItems = []; // menyimpan { mpid, c, link, rawIndex }
+
+    function renderBulkResults(itemsArray) {
+        if (!itemsArray.length) {
+            bulkResultWrapper.innerHTML = '<div style="background:#eef2ff; border-radius:28px; padding:32px; text-align:center; color:#345"><i class="fas fa-inbox"></i> Belum ada hasil, klik Generate</div>';
+            bulkActionButtons.style.display = 'none';
+            return;
+        }
+        let html = `<div class="bulk-results-container">`;
+        itemsArray.forEach((item, idx) => {
+            html += `
+                <div class="result-bulk-item" data-idx="${idx}">
+                    <div class="item-header">
+                        <span class="item-badge"><i class="fas fa-id-card"></i> MPID: ${escapeHtml(item.mpid)} | C: ${escapeHtml(item.c)}</span>
+                        <button class="copy-single-btn" data-link="${escapeAttr(item.link)}" data-idx="${idx}"><i class="far fa-copy"></i> Salin link ini</button>
+                    </div>
+                    <div class="item-link" id="bulkLink-${idx}">${escapeHtml(item.link)}</div>
+                </div>
+            `;
+        });
+        html += `</div>`;
+        bulkResultWrapper.innerHTML = html;
+        bulkActionButtons.style.display = 'flex';
+
+        // attach event listeners to each copy button
+        document.querySelectorAll('.copy-single-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const linkRaw = btn.getAttribute('data-link');
+                if (linkRaw) {
+                    navigator.clipboard.writeText(linkRaw).then(() => {
+                        showToast('📋 Link tersalin!');
+                        const originalHtml = btn.innerHTML;
+                        btn.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
+                        setTimeout(() => { btn.innerHTML = originalHtml; }, 1200);
+                    }).catch(() => showToast('Gagal copy', true));
+                }
+            });
+        });
+    }
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+            return c;
+        });
+    }
+    function escapeAttr(str) {
+        return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+    }
+
+    function parseBulkData(rawText) {
+        const lines = rawText.split(/\r?\n/);
+        const parsed = [];
+        let lineNum = 0;
+        for (let line of lines) {
+            lineNum++;
+            line = line.trim();
+            if (line === "") continue;
+            // format: MPID,C
+            let commaIndex = line.indexOf(',');
+            if (commaIndex === -1) {
+                showToast(`⚠️ Baris ${lineNum}: format salah (harus MPID,C) -> "${line}"`, true);
+                continue;
+            }
+            let mpidPart = line.substring(0, commaIndex).trim();
+            let cPart = line.substring(commaIndex + 1).trim();
+            if (mpidPart === "") {
+                showToast(`⚠️ Baris ${lineNum}: MPID kosong`, true);
+                continue;
+            }
+            if (cPart === "") {
+                showToast(`⚠️ Baris ${lineNum}: C kosong`, true);
+                continue;
+            }
+            // optional: validasi mpid angka (warning only)
+            if (!/^\d+$/.test(mpidPart)) {
+                showToast(`⚠️ Baris ${lineNum}: MPID bukan angka (${mpidPart}) tetap diproses`, false);
+            }
+            parsed.push({ mpid: mpidPart, c: cPart, rawLine: line });
+        }
+        return parsed;
+    }
+
+    function generateBulkLinks() {
+        const rawData = bulkDataTextarea.value;
+        if (!rawData.trim()) {
+            showToast('Masukkan data bulk (setiap baris MPID,C)', true);
+            return;
+        }
+        const entries = parseBulkData(rawData);
+        if (entries.length === 0) {
+            showToast('Tidak ada data valid untuk diproses. Periksa format baris (MPID,C)', true);
+            bulkResultWrapper.innerHTML = '<div style="background:#ffe6e6; border-radius:28px; padding:28px; text-align:center;">❌ Format tidak valid. Gunakan: MPID,C per baris</div>';
+            bulkActionButtons.style.display = 'none';
+            currentBulkItems = [];
+            return;
+        }
+        
+        const resultItems = [];
+        for (let ent of entries) {
+            const link = buildLink(ent.mpid, ent.c);
+            resultItems.push({
+                mpid: ent.mpid,
+                c: ent.c,
+                link: link,
+            });
+        }
+        currentBulkItems = resultItems;
+        renderBulkResults(currentBulkItems);
+        showToast(`✅ Berhasil generate ${currentBulkItems.length} link bulk.`);
+    }
+
+    // copy semua link dalam bentuk teks (satu baris satu link)
+    function copyAllLinksAsText() {
+        if (!currentBulkItems.length) {
+            showToast('Tidak ada link untuk disalin', true);
+            return;
+        }
+        const allLinks = currentBulkItems.map(item => item.link).join('\n');
+        navigator.clipboard.writeText(allLinks).then(() => {
+            showToast(`📋 ${currentBulkItems.length} link disalin ke clipboard!`);
+        }).catch(() => showToast('Gagal menyalin semua link', true));
+    }
+
+    function clearBulkResults() {
+        currentBulkItems = [];
+        bulkResultWrapper.innerHTML = '<div style="background:#eef2ff; border-radius:28px; padding:32px; text-align:center; color:#345"><i class="fas fa-eraser"></i> Hasil dibersihkan</div>';
+        bulkActionButtons.style.display = 'none';
+        showToast('Hasil bulk dihapus');
+    }
+
+    // Event listener bulk
+    bulkGenerateBtn.addEventListener('click', generateBulkLinks);
+    document.getElementById('copyAllLinksBtn')?.addEventListener('click', copyAllLinksAsText);
+    document.getElementById('clearBulkResultsBtn')?.addEventListener('click', clearBulkResults);
+
+    // =============== TAB SWITCH (single / bulk) ===============
+    const singlePanel = document.getElementById('singlePanel');
+    const bulkPanelElem = document.getElementById('bulkPanel');
+    const singleModeBtn = document.getElementById('singleModeBtn');
+    const bulkModeBtn = document.getElementById('bulkModeBtn');
+
+    function setActiveMode(mode) {
+        if (mode === 'single') {
+            singlePanel.classList.add('active-panel');
+            bulkPanelElem.classList.remove('active-panel');
+            singleModeBtn.classList.add('active');
+            bulkModeBtn.classList.remove('active');
+        } else {
+            singlePanel.classList.remove('active-panel');
+            bulkPanelElem.classList.add('active-panel');
+            bulkModeBtn.classList.add('active');
+            singleModeBtn.classList.remove('active');
+        }
+    }
+
+    singleModeBtn.addEventListener('click', () => setActiveMode('single'));
+    bulkModeBtn.addEventListener('click', () => setActiveMode('bulk'));
+
+    // sedikit styling dynamic untuk result area single agar konsisten
+    const styleSingle = document.createElement('style');
+    styleSingle.textContent = `
+        .result-area {
+            background: #ffffffdb;
+            backdrop-filter: blur(4px);
+            border-radius: 28px;
+            padding: 20px;
+            border: 1px solid white;
+            margin-bottom: 12px;
+        }
+        .result-link {
+            font-family: monospace;
+            background: #f2f5ff;
+            padding: 14px;
+            border-radius: 20px;
+            word-break: break-all;
+        }
+        .copy-btn {
+            background: #2f4b8a;
+            border: none;
+            color: white;
+            font-weight: 600;
+            border-radius: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.1s;
+        }
+        .copy-btn:hover { background: #1f3a70; }
+        .panel { display: none; }
+        .panel.active-panel { display: block; }
+    `;
+    document.head.appendChild(styleSingle);
+    
+    // Inisialisasi default single result sembunyi
+    singleResultArea.style.display = 'none';
+    singleCopyBtn.style.display = 'none';
+    
+    // Optional: default bulk placeholder value menarik
+    if (!bulkDataTextarea.value.trim()) {
+        bulkDataTextarea.value = "3486010174901633,sukhawhoosh\n1234567890123456,bonusramadhan\n9876543210987654,livinevent";
+    }
+    
+    console.log("Bulk mode ready - multi copy & mass generate with premium footer");
+</script>
+</body>
+</html>

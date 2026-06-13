@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Title & Description -->
+    <title>Tools Hub - PRCUISA | QR Tools & MPID</title>
+    <meta name="description" content="Kumpulan tools praktis dari PRCUISA. Akses QR Tools untuk generate dan scan QR code, serta MPID untuk verifikasi identitas mobile.">
+    <meta name="keywords" content="PRCUISA tools, QR tools, MPID, QR code generator, QR scanner">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://prcuisa.com/tools/">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Tools Hub - PRCUISA">
+    <meta property="og:description" content="Kumpulan tools praktis dari PRCUISA. QR Tools dan MPID siap membantu aktivitas digital Anda.">
+    <meta property="og:image" content="https://prcuisa.com/og-image.jpg">
+    <meta property="og:url" content="https://prcuisa.com/tools/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PRCUISA">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tools Hub - PRCUISA">
+    <meta name="twitter:description" content="Akses QR Tools dan MPID dari PRCUISA. Gratis dan mudah digunakan.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/logodark.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logodark.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'display': ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#e6f7f9',
+                            100: '#c0ebf0',
+                            200: '#96dee7',
+                            300: '#66d1dd',
+                            400: '#3cc6d5',
+                            500: '#009AA5',
+                            600: '#008a94',
+                            700: '#007780',
+                            800: '#00656d',
+                            900: '#00464d',
+                        },
+                        accent: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-reverse': 'float-reverse 8s ease-in-out infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'float-reverse': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(20px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(0, 154, 165, 0.5)' },
+                            '100%': { boxShadow: '0 0 30px rgba(0, 154, 165, 0.8)' },
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles */
+        @font-face {
+            font-family: 'Nasalization';
+            src: url('https://raw.githubusercontent.com/prcuisa/beta/main/Nasalization-Rg.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        .logo-text {
+            width: 120px;
+            height: 32px;
+            background-image: url('/PRCUISAA.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+        }
+
+        .dark .logo-text {
+            filter: brightness(0) invert(1);
+        }
+        
+        .logo-img {
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo-light {
+            display: block;
+        }
+        
+        .logo-dark {
+            display: none;
+        }
+        
+        .dark .logo-light {
+            display: none;
+        }
+        
+        .dark .logo-dark {
+            display: block;
+        }
+
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark .glass {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(to right, #009AA5, #0ea5e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: gradient 3s ease infinite;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #009AA5;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #008a94;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Gradient border */
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 24px;
+            padding: 2px;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 24px;
+            padding: 2px;
+            background: linear-gradient(135deg, #009AA5, #0ea5e9);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .dark .gradient-border {
+            background: #1f2937;
+        }
+        
+        /* Tool icon animation */
+        .tool-icon-wrapper {
+            transition: transform 0.3s ease;
+        }
+        
+        .tool-card:hover .tool-icon-wrapper {
+            transform: scale(1.1);
+        }
+        
+        /* Search input */
+        .search-input:focus {
+            box-shadow: 0 0 0 3px rgba(0, 154, 165, 0.2);
+        }
+        
+        /* Coming soon badge */
+        .coming-soon-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+        
+        /* Stats counter */
+        .stat-number {
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="font-inter antialiased text-gray-800 bg-gray-50 dark:bg-gray-900 loaded">
+    <!-- Animated Background Elements -->
+    <div class="fixed inset-0 overflow-hidden -z-10">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary-400 opacity-10 mix-blend-multiply filter blur-3xl animate-spin-slow"></div>
+        <div class="absolute bottom-1/3 right-1/3 w-80 h-80 rounded-full bg-accent-400 opacity-10 mix-blend-multiply filter blur-3xl animate-spin-slow"></div>
+        <div class="absolute top-1/2 right-1/4 w-72 h-72 rounded-full bg-primary-500 opacity-10 mix-blend-multiply filter blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-96 h-96 rounded-full bg-accent-500 opacity-10 mix-blend-multiply filter blur-3xl animate-float-reverse"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="https://prcuisa.com" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 flex items-center justify-center overflow-hidden">
+                        <img src="/logolight.png" alt="PRCUISA Logo" class="logo-img logo-light w-8 h-8 object-contain">
+                        <img src="/logodark.png" alt="PRCUISA Logo" class="logo-img logo-dark w-8 h-8 object-contain">
+                    </div>
+                    <div class="logo-text"></div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="https://prcuisa.com#services" class="text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-300 font-medium">Services</a>
+                    <a href="https://prcuisa.com#work" class="text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-300 font-medium">Our Work</a>
+                    <a href="https://prcuisa.com#about" class="text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-300 font-medium">About</a>
+                    <a href="https://prcuisa.com#contact" class="text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors duration-300 font-medium">Contact</a>
+                    <a href="https://prcuisa.com/tools" class="text-primary-600 dark:text-primary-400 font-semibold">Tools</a>
+                    <button id="theme-toggle" class="p-2 rounded-lg focus:outline-none">
+                        <i class="fas fa-sun text-yellow-400"></i>
+                    </button>
+                    <a href="https://prcuisa.com#contact" class="px-4 py-2 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white hover:shadow-lg transition-all duration-300">Get Started</a>
+                </div>
+
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass">
+            <div class="px-2 pt-2 pb-3 space-y-2">
+                <a href="https://prcuisa.com#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800">Services</a>
+                <a href="https://prcuisa.com#work" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800">Our Work</a>
+                <a href="https://prcuisa.com#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800">About</a>
+                <a href="https://prcuisa.com#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800">Contact</a>
+                <a href="https://prcuisa.com/tools" class="block px-3 py-2 rounded-md text-base font-medium text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30">Tools</a>
+                <button id="mobile-theme-toggle" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 w-full text-left">
+                    <i class="fas fa-sun mr-2 text-yellow-400"></i> Toggle Light Mode
+                </button>
+                <a href="https://prcuisa.com#contact" class="block px-3 py-2 rounded-md text-base font-medium text-center text-white bg-gradient-to-r from-primary-500 to-accent-500">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section for Tools -->
+    <section class="relative overflow-hidden py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm font-medium mb-6">
+                    <i class="fas fa-tools mr-2 text-sm"></i>
+                    PRCUISA Tools Hub
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight dark:text-white">
+                    <span class="gradient-text">Digital Tools</span><br>
+                    For Everyday Needs
+                </h1>
+                <p class="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Kumpulan tools praktis dan gratis dari PRCUISA. Dikembangkan untuk mempermudah aktivitas digital Anda.
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="mt-8 max-w-md mx-auto">
+                    <div class="relative">
+                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="searchTools" placeholder="Cari tools... (QR, MPID)" 
+                               class="search-input w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute top-1/2 left-0 w-32 h-32 bg-primary-400 rounded-full filter blur-3xl opacity-20 -translate-x-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-40 h-40 bg-accent-400 rounded-full filter blur-3xl opacity-20 translate-x-1/2 translate-y-1/2"></div>
+    </section>
+
+    <!-- Tools Grid Section -->
+    <section class="py-8 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="text-center p-4 rounded-2xl bg-white dark:bg-gray-800 shadow-sm">
+                    <div class="text-3xl font-bold text-primary-500 stat-number" id="activeToolsCount">2</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Active Tools</div>
+                </div>
+                <div class="text-center p-4 rounded-2xl bg-white dark:bg-gray-800 shadow-sm">
+                    <div class="text-3xl font-bold text-primary-500 stat-number" id="totalUsersCount">1K+</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Total Users</div>
+                </div>
+                <div class="text-center p-4 rounded-2xl bg-white dark:bg-gray-800 shadow-sm">
+                    <div class="text-3xl font-bold text-primary-500">Free</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Always Free</div>
+                </div>
+                <div class="text-center p-4 rounded-2xl bg-white dark:bg-gray-800 shadow-sm">
+                    <div class="text-3xl font-bold text-primary-500">No Login</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Direct Access</div>
+                </div>
+            </div>
+            
+            <!-- Tools Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8" id="toolsGrid">
+                <!-- Tool 1: QR Tools -->
+                <a href="https://prcuisa.com/tools/qr" class="group tool-card gradient-border card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 h-full flex flex-col">
+                        <div class="tool-icon-wrapper w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center mb-6 transition-all">
+                            <i class="fas fa-qrcode text-white text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">QR Tools</h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                            Generate dan scan QR code dengan mudah. Support berbagai format termasuk teks, URL, kontak, WiFi, dan lainnya.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 text-xs rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300">QR Generator</span>
+                            <span class="px-2 py-1 text-xs rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300">QR Scanner</span>
+                            <span class="px-2 py-1 text-xs rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300">Custom Design</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs">
+                                <i class="fas fa-circle text-[6px] mr-1"></i> Active
+                            </span>
+                            <span class="text-primary-500 group-hover:translate-x-1 transition-transform inline-flex items-center">
+                                Try Now <i class="fas fa-arrow-right ml-2"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tool 2: MPID -->
+                <a href="https://prcuisa.com/tools/mpid" class="group tool-card gradient-border card-hover">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 h-full flex flex-col">
+                        <div class="tool-icon-wrapper w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center mb-6 transition-all">
+                            <i class="fas fa-id-card text-white text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">MPID</h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                            Tools untuk mengelola dan memverifikasi MPID (Mobile Personal Identification) dengan cepat, aman, dan akurat.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 text-xs rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300">Verification</span>
+                            <span class="px-2 py-1 text-xs rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300">Management</span>
+                            <span class="px-2 py-1 text-xs rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300">Secure</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs">
+                                <i class="fas fa-circle text-[6px] mr-1"></i> Active
+                            </span>
+                            <span class="text-primary-500 group-hover:translate-x-1 transition-transform inline-flex items-center">
+                                Try Now <i class="fas fa-arrow-right ml-2"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Coming Soon Section -->
+            <div class="mt-16">
+                <div class="text-center mb-8">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800">
+                        <i class="fas fa-clock mr-2 text-primary-500"></i>
+                        <span class="text-sm font-medium text-gray-600 dark:text-gray-400">More tools coming soon</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="rounded-2xl bg-gray-50 dark:bg-gray-800/50 p-6 text-center border border-dashed border-gray-200 dark:border-gray-700">
+                        <div class="w-12 h-12 rounded-xl bg-gray-200 dark:bg-gray-700 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-file-alt text-gray-400 text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300">PDF Tools</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-500 mt-1">Coming Q2 2026</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-50 dark:bg-gray-800/50 p-6 text-center border border-dashed border-gray-200 dark:border-gray-700">
+                        <div class="w-12 h-12 rounded-xl bg-gray-200 dark:bg-gray-700 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-image text-gray-400 text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300">Image Tools</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-500 mt-1">Coming Q2 2026</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-50 dark:bg-gray-800/50 p-6 text-center border border-dashed border-gray-200 dark:border-gray-700">
+                        <div class="w-12 h-12 rounded-xl bg-gray-200 dark:bg-gray-700 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-gray-400 text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300">Analytics Tools</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-500 mt-1">Coming Q3 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Consultation CTA -->
+    <section class="py-16 bg-gradient-to-r from-primary-500 to-accent-500 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm mb-6">
+                    <i class="fas fa-gift mr-2"></i>
+                    <span class="font-semibold">Need Help?</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Butuh Tools Khusus?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                    Kami bisa mengembangkan tools custom sesuai kebutuhan Anda. Konsultasi gratis 30 menit tersedia.
+                </p>
+                <a href="https://prcuisa.com#contact" class="inline-flex items-center px-8 py-4 rounded-full bg-white text-primary-600 font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-calendar-check mr-2"></i>
+                    Book Free Consultation
+                </a>
+            </div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-white/10 animate-float"></div>
+        <div class="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-white/10 animate-float-reverse"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <div class="col-span-2">
+                    <a href="https://prcuisa.com" class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 flex items-center justify-center overflow-hidden">
+                            <img src="/logodark.png" alt="PRCUISA Logo" class="w-8 h-8 object-contain">
+                        </div>
+                        <div class="logo-text"></div>
+                    </a>
+                    <p class="text-gray-400 mb-6">
+                        PRCUISA Tools Hub menyediakan berbagai tools digital praktis dan gratis untuk mempermudah aktivitas Anda.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/prcuisa" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/prcuisa" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-600 flex items-center justify-center text-gray-300 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6">Tools</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https://prcuisa.com/tools/qr" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">QR Tools</a></li>
+                        <li><a href="https://prcuisa.com/tools/mpid" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">MPID</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300 opacity-50">PDF Tools (Soon)</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300 opacity-50">Image Tools (Soon)</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https://prcuisa.com#about" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">About Us</a></li>
+                        <li><a href="https://prcuisa.com#contact" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https://prcuisa.com#contact" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Free Consultation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">FAQs</a></li>
+                        <li><a href="mailto:prcuisa@gmail.com" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">prcuisa@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2026 PRCUISA. All Rights Reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-primary-400 text-sm transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-primary-400 text-sm transition-colors duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Consultation Button -->
+    <div class="fixed bottom-8 left-8 z-40 float-animation">
+        <a href="https://prcuisa.com#contact" class="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <i class="fas fa-comments mr-2"></i>
+            Free Consultation
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700 transition-colors duration-300 items-center justify-center z-50 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dark mode toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+            const html = document.documentElement;
+
+            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (savedTheme === 'dark') {
+                html.classList.add('dark');
+                if(themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun text-yellow-400"></i>';
+                if(mobileThemeToggle) mobileThemeToggle.innerHTML = '<i class="fas fa-sun mr-2 text-yellow-400"></i> Toggle Light Mode';
+            }
+
+            if(themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    html.classList.toggle('dark');
+                    const isDark = html.classList.contains('dark');
+                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                    themeToggle.innerHTML = isDark ? '<i class="fas fa-sun text-yellow-400"></i>' : '<i class="fas fa-moon text-gray-700"></i>';
+                    if(mobileThemeToggle) mobileThemeToggle.innerHTML = isDark ? '<i class="fas fa-sun mr-2 text-yellow-400"></i> Toggle Light Mode' : '<i class="fas fa-moon mr-2"></i> Toggle Dark Mode';
+                });
+            }
+
+            if(mobileThemeToggle) {
+                mobileThemeToggle.addEventListener('click', function() {
+                    html.classList.toggle('dark');
+                    const isDark = html.classList.contains('dark');
+                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                    if(themeToggle) themeToggle.innerHTML = isDark ? '<i class="fas fa-sun text-yellow-400"></i>' : '<i class="fas fa-moon text-gray-700"></i>';
+                    mobileThemeToggle.innerHTML = isDark ? '<i class="fas fa-sun mr-2 text-yellow-400"></i> Toggle Light Mode' : '<i class="fas fa-moon mr-2"></i> Toggle Dark Mode';
+                });
+            }
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if(mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenuButton.innerHTML = mobileMenu.classList.contains('hidden') ? '<i class="fas fa-bars text-2xl"></i>' : '<i class="fas fa-times text-2xl"></i>';
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                        if(mobileMenuButton) mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+                    });
+                });
+            }
+
+            // Search functionality
+            const searchInput = document.getElementById('searchTools');
+            const toolsGrid = document.getElementById('toolsGrid');
+            const toolCards = toolsGrid ? toolsGrid.querySelectorAll('.tool-card') : [];
+            
+            if(searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    let visibleCount = 0;
+                    
+                    toolCards.forEach(card => {
+                        const title = card.querySelector('h2')?.innerText.toLowerCase() || '';
+                        const description = card.querySelector('p')?.innerText.toLowerCase() || '';
+                        const tags = Array.from(card.querySelectorAll('.flex-wrap span')).map(span => span.innerText.toLowerCase()).join(' ');
+                        
+                        if (title.includes(searchTerm) || description.includes(searchTerm) || tags.includes(searchTerm) || searchTerm === '') {
+                            card.style.display = 'block';
+                            visibleCount++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    const activeToolsSpan = document.getElementById('activeToolsCount');
+                    if(activeToolsSpan) activeToolsSpan.textContent = visibleCount;
+                });
+            }
+
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            if(backToTopButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.remove('hidden');
+                        backToTopButton.classList.add('flex');
+                    } else {
+                        backToTopButton.classList.add('hidden');
+                        backToTopButton.classList.remove('flex');
+                    }
+                });
+
+                backToTopButton.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

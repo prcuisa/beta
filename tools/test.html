@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect dengan Parameter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .url-display {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            word-break: break-all;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+        .loading {
+            color: #0078d4;
+        }
+        .error {
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Redirecting...</h1>
+        <p>Mengekstrak parameter dari URL dan mengarahkan ke halaman tujuan...</p>
+        
+        <div id="originalUrl" class="url-display"></div>
+        
+        <p class="loading" id="status">Memproses parameter...</p>
+        <p class="error" id="error" style="display: none;"></p>
+        
+        <div id="result" style="display: none;">
+            <p>Parameter ditemukan:</p>
+            <div class="url-display" id="parameterValue"></div>
+            <p>Tujuan redirect:</p>
+            <div class="url-display" id="redirectUrl"></div>
+            <p><small>Jika tidak redirect otomatis, <a href="#" id="manualLink">klik di sini</a></small></p>
+        </div>
+    </div>
+
+    <script>
+        // Base URL Microsoft Forms
+        const BASE_URL = 'https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=fb7bS99jXE6VPpKGMWiV5lfNvPynd_FAtrwH1ne4lUhUNllLT0VPRzMwRk9CMFBMWUxaWDRRQ0RXRyQlQCN0PWcu';
+        
+        // Nama parameter yang dicari
+        const PARAM_NAME = 'rcecb173e98b0491dbd0bca5c274606c2';
+
+        // Fungsi untuk mendapatkan parameter dari URL
+        function getParameterFromUrl(paramName) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(paramName);
+        }
+
+        // Fungsi utama
+        function main() {
+            // Tampilkan URL asli
+            const currentUrl = window.location.href;
+            document.getElementById('originalUrl').textContent = currentUrl;
+
+            // Ambil parameter
+            const parameterValue = getParameterFromUrl(PARAM_NAME);
+            
+            if (parameterValue) {
+                // Parameter ditemukan
+                document.getElementById('status').style.display = 'none';
+                document.getElementById('result').style.display = 'block';
+                
+                // Tampilkan nilai parameter
+                document.getElementById('parameterValue').textContent = `${PARAM_NAME}=${parameterValue}`;
+                
+                // Buat URL redirect
+                const redirectUrl = `${BASE_URL}&${PARAM_NAME}=${encodeURIComponent(parameterValue)}`;
+                document.getElementById('redirectUrl').textContent = redirectUrl;
+                
+                // Set manual link
+                document.getElementById('manualLink').href = redirectUrl;
+                
+                // Redirect otomatis setelah 2 detik
+                setTimeout(() => {
+                    window.location.href = redirectUrl;
+                }, 2000);
+            } else {
+                // Parameter tidak ditemukan
+                document.getElementById('status').style.display = 'none';
+                const errorElement = document.getElementById('error');
+                errorElement.style.display = 'block';
+                errorElement.textContent = `Parameter "${PARAM_NAME}" tidak ditemukan dalam URL.`;
+                
+                // Tampilkan instruksi
+                const resultElement = document.getElementById('result');
+                resultElement.style.display = 'block';
+                document.getElementById('parameterValue').textContent = '(tidak ditemukan)';
+                
+                const fallbackUrl = `${BASE_URL}`;
+                document.getElementById('redirectUrl').textContent = fallbackUrl;
+                document.getElementById('manualLink').href = fallbackUrl;
+                document.getElementById('manualLink').textContent = 'lanjut tanpa parameter';
+            }
+        }
+
+        // Jalankan saat halaman siap
+        document.addEventListener('DOMContentLoaded', main);
+    </script>
+</body>
+</html>

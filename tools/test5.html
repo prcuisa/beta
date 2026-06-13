@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandirian Guardian Merchant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 32px 24px;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+        
+        .header {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .badge {
+            background: #e8f0fe;
+            color: #004d99;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 100px;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.3px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a2b3c;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        
+        .reward {
+            color: #ff6b00;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 20px;
+            background: #fff1e0;
+            padding: 8px 16px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        
+        .criteria {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        
+        .criteria-title {
+            font-weight: 600;
+            color: #1a2b3c;
+            margin-bottom: 12px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .criteria-list {
+            list-style: none;
+        }
+        
+        .criteria-list li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: #4a5568;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .criteria-list li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .criteria-list li::before {
+            content: "✅";
+            font-size: 14px;
+        }
+        
+        /* Referral Code Section */
+        .referral-section {
+            background: linear-gradient(135deg, #f5f0ff 0%, #e8f0fe 100%);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 24px;
+            border: 1px solid #c2d9ff;
+        }
+        
+        .referral-label {
+            font-size: 14px;
+            color: #004d99;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .referral-code {
+            background: white;
+            border-radius: 16px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border: 2px dashed #004d99;
+        }
+        
+        .code-value {
+            font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+            font-size: 20px;
+            font-weight: 700;
+            color: #004d99;
+            letter-spacing: 1px;
+            word-break: break-all;
+        }
+        
+        .code-empty {
+            color: #a0aec0;
+            font-style: italic;
+            font-size: 16px;
+        }
+        
+        .copy-code-btn {
+            background: #004d99;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        
+        .copy-code-btn:hover {
+            background: #003366;
+        }
+        
+        .copy-code-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .copy-code-btn:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+        }
+        
+        .survey-section {
+            background: #f0f7ff;
+            border-radius: 20px;
+            padding: 24px;
+            margin: 24px 0;
+            border: 1px solid #d4e4ff;
+        }
+        
+        .survey-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #004d99;
+            margin-bottom: 8px;
+        }
+        
+        .survey-desc {
+            color: #4a5568;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-copy {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-copy:hover {
+            background: #218838;
+        }
+        
+        .btn-open {
+            background: #004d99;
+            color: white;
+        }
+        
+        .btn-open:hover {
+            background: #003366;
+        }
+        
+        .btn:active {
+            transform: scale(0.97);
+        }
+        
+        .hint {
+            font-size: 13px;
+            color: #718096;
+            text-align: center;
+            padding: 10px 16px;
+            background: white;
+            border-radius: 50px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .alert {
+            padding: 12px 16px;
+            border-radius: 50px;
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            display: none;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        
+        .alert-warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            display: block;
+        }
+        
+        .footer {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 13px;
+            color: #718096;
+        }
+        
+        .footer a {
+            color: #004d99;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 20px 0 16px;
+        }
+        
+        .small-note {
+            font-size: 11px;
+            color: #a0aec0;
+            margin-top: 6px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Header -->
+        <div class="header">
+            <div class="badge">🏆 MANDIRIAN GUARDIAN MERCHANT</div>
+            <h1>Jadilah pahlawan merchant di sekitarmu</h1>
+            <div class="reward">✨ Raih 1.000 Livin'poin</div>
+        </div>
+
+        <!-- Kriteria -->
+        <div class="criteria">
+            <div class="criteria-title">
+                <span>📋</span> Kriteria Merchant:
+            </div>
+            <ul class="criteria-list">
+                <li>Belum punya EDC Bank Mandiri</li>
+                <li>Sudah punya EDC, tapi terkendala teknis</li>
+                <li>Sudah punya EDC, tapi belum digunakan</li>
+                <li>Sudah pakai Livin' Merchant, tapi terkendala teknis</li>
+            </ul>
+        </div>
+
+        <!-- Referral Code Display -->
+        <div class="referral-section">
+            <div class="referral-label">
+                <span>🔑</span> Kode Refferal di Livin' Anda:
+            </div>
+            <div class="referral-code" id="referralCodeContainer">
+                <span class="code-value" id="referralCodeValue">Memuat...</span>
+                <button class="copy-code-btn" id="copyCodeBtn">
+                    <span>📋</span> Salin
+                </button>
+            </div>
+            <div class="small-note" id="referralNote">
+                Kode referral akan digunakan untuk pelacakan partisipasi Anda
+            </div>
+        </div>
+
+        <!-- Survey Section -->
+        <div class="survey-section">
+            <div class="survey-title">📝 Isi survei sekarang</div>
+            <div class="survey-desc">
+                Klik tombol di bawah untuk mengisi survei
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button class="btn btn-copy" id="copySurveyBtn">
+                    <span>📋</span> Salin Link Survei
+                </button>
+                <button class="btn btn-open" id="openSurveyBtn">
+                    <span>🔗</span> Buka Survei
+                </button>
+            </div>
+
+            <!-- Hint -->
+            <div class="hint">
+                📱 Jika mengalami kendala, salin link dan buka melalui browser ponsel kamu
+            </div>
+
+            <!-- Alert -->
+            <div id="alert" class="alert"></div>
+        </div>
+
+        <!-- Info -->
+        <div class="footer">
+            <div>🏆 1.000 Mandirian dengan laporan terbanyak menjadi pemenang</div>
+            <div style="margin-top: 10px;">
+                📌 Info lengkap: <a href="#" id="infoLink">bmri.id/GuardianMerchant</a>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Hidden Parameter Name -->
+        <div style="font-size: 11px; color: #cbd5e0; text-align: center;">
+            parameter: rcecb173e98b0491dbd0bca5c274606c2
+        </div>
+    </div>
+
+    <script>
+        const BASE_URL = 'https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=fb7bS99jXE6VPpKGMWiV5lfNvPynd_FAtrwH1ne4lUhUNllLT0VPRzMwRk9CMFBMWUxaWDRRQ0RXRyQlQCN0PWcu';
+        const PARAM_NAME = 'rcecb173e98b0491dbd0bca5c274606c2';
+
+        // Get parameter from URL
+        function getParameter() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(PARAM_NAME);
+        }
+
+        // Generate full link
+        function generateLink(parameterValue) {
+            if (parameterValue) {
+                return `${BASE_URL}&${PARAM_NAME}=${encodeURIComponent(parameterValue)}`;
+            }
+            return BASE_URL;
+        }
+
+        // Update display
+        function updateDisplay() {
+            const parameterValue = getParameter();
+            const referralElement = document.getElementById('referralCodeValue');
+            const copyCodeBtn = document.getElementById('copyCodeBtn');
+            const referralNote = document.getElementById('referralNote');
+            const generatedLink = generateLink(parameterValue);
+            
+            // Update referral code display
+            if (parameterValue) {
+                referralElement.textContent = parameterValue;
+                referralElement.className = 'code-value';
+                copyCodeBtn.disabled = false;
+                referralNote.innerHTML = '✅ Kode referral aktif - akan digunakan untuk pelacakan partisipasi Anda';
+                referralNote.style.color = '#28a745';
+            } else {
+                referralElement.textContent = '(belum ada kode referral)';
+                referralElement.className = 'code-empty';
+                copyCodeBtn.disabled = true;
+                referralNote.innerHTML = '⚠️ Kode referral tidak ditemukan dalam URL';
+                referralNote.style.color = '#856404';
+            }
+            
+            // Store link for buttons
+            document.getElementById('survey-section').setAttribute('data-link', generatedLink);
+            
+            return { parameterValue, generatedLink };
+        }
+
+        // Copy referral code
+        async function copyReferralCode() {
+            const parameterValue = getParameter();
+            const alert = document.getElementById('alert');
+            
+            if (!parameterValue) {
+                alert.className = 'alert alert-warning';
+                alert.textContent = '⚠️ Tidak ada kode referral untuk disalin';
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                    alert.className = 'alert';
+                }, 3000);
+                return;
+            }
+            
+            try {
+                await navigator.clipboard.writeText(parameterValue);
+                alert.className = 'alert alert-success';
+                alert.textContent = '✅ Kode referral berhasil disalin!';
+                
+                // Visual feedback on button
+                const copyBtn = document.getElementById('copyCodeBtn');
+                copyBtn.style.background = '#28a745';
+                setTimeout(() => {
+                    copyBtn.style.background = '#004d99';
+                }, 200);
+            } catch (err) {
+                // Fallback
+                const textArea = document.createElement('textarea');
+                textArea.value = parameterValue;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                alert.className = 'alert alert-success';
+                alert.textContent = '✅ Kode referral berhasil disalin!';
+            }
+            
+            setTimeout(() => {
+                alert.style.display = 'none';
+                alert.className = 'alert';
+            }, 3000);
+        }
+
+        // Copy survey link
+        async function copySurveyLink() {
+            const link = document.getElementById('survey-section').getAttribute('data-link');
+            const alert = document.getElementById('alert');
+            
+            try {
+                await navigator.clipboard.writeText(link);
+                alert.className = 'alert alert-success';
+                alert.textContent = '✅ Link survei berhasil disalin!';
+            } catch (err) {
+                // Fallback
+                const textArea = document.createElement('textarea');
+                textArea.value = link;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                alert.className = 'alert alert-success';
+                alert.textContent = '✅ Link survei berhasil disalin!';
+            }
+            
+            setTimeout(() => {
+                alert.style.display = 'none';
+                alert.className = 'alert';
+            }, 3000);
+        }
+
+        // Open survey link
+        function openSurveyLink() {
+            const link = document.getElementById('survey-section').getAttribute('data-link');
+            window.open(link, '_blank');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add id to survey section for data storage
+            const surveySection = document.querySelector('.survey-section');
+            surveySection.id = 'survey-section';
+            
+            const { parameterValue } = updateDisplay();
+            
+            // Show warning if no parameter
+            if (!parameterValue) {
+                const alert = document.getElementById('alert');
+                alert.className = 'alert alert-warning';
+                alert.textContent = '⚠️ Kode referral tidak ditemukan. Link akan dibuka tanpa referral.';
+            }
+            
+            // Button listeners
+            document.getElementById('copyCodeBtn').addEventListener('click', copyReferralCode);
+            document.getElementById('copySurveyBtn').addEventListener('click', copySurveyLink);
+            document.getElementById('openSurveyBtn').addEventListener('click', openSurveyLink);
+            
+            // Info link
+            document.getElementById('infoLink').addEventListener('click', (e) => {
+                e.preventDefault();
+                window.open('https://bmri.id/GuardianMerchant', '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

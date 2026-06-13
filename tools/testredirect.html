@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengalihkan Anda...</title>
+    <!-- Meta refresh sebagai cadangan jika JavaScript dinonaktifkan -->
+    <meta http-equiv="refresh" content="2;url='https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=fb7bS99jXE6VPpKGMWiV5lfNvPynd_FAtrwH1ne4lUhUNllLT0VPRzMwRk9CMFBMWUxaWDRRQ0RXRyQlQCN0PWcu'" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f3f2f1;
+            color: #323130;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid #0078d4;
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #605e5c;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Mengalihkan Anda ke Formulir Guardian Merchant</h2>
+        <div class="spinner"></div>
+        <p>Anda akan diarahkan secara otomatis dalam beberapa detik...</p>
+        <p>Jika tidak otomatis, klik tautan berikut:</p>
+        <p>
+            <a href="#" id="redirectLink">Lanjutkan ke Formulir</a>
+        </p>
+        <p class="info" id="infoText"></p>
+    </div>
+
+    <script>
+        (function() {
+            // --- Konfigurasi ---
+            // Tentukan secara manual KODE REFERRAL di sini jika ingin tetap,
+            // atau biarkan skrip mengambilnya dari parameter 'referral' di URL halaman ini.
+            const MANUAL_REFERRAL_CODE = ''; // Isi manual contoh: 'MGMecsa'. Kosongkan '' untuk ambil dari URL.
+
+            // Base URL tujuan formulir Microsoft Forms
+            const baseTargetUrl = 'https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=fb7bS99jXE6VPpKGMWiV5lfNvPynd_FAtrwH1ne4lUhUNllLT0VPRzMwRk9CMFBMWUxaWDRRQ0RXRyQlQCN0PWcu';
+            // Nama parameter referral yang diinginkan di URL tujuan
+            const targetParamName = 'rcecb173e98b0491dbd0bca5c274606c2';
+            // Nama parameter referral di URL sumber (halaman ini)
+            const sourceParamName = 'referral';
+            // --- Akhir Konfigurasi ---
+
+            let referralCode = MANUAL_REFERRAL_CODE;
+
+            // Jika kode manual tidak diisi, coba ambil dari URL parameter halaman ini
+            if (!referralCode) {
+                const urlParams = new URLSearchParams(window.location.search);
+                referralCode = urlParams.get(sourceParamName);
+            }
+
+            // Bangun URL tujuan akhir
+            let finalTargetUrl = baseTargetUrl;
+            const infoEl = document.getElementById('infoText');
+            const linkEl = document.getElementById('redirectLink');
+
+            if (referralCode) {
+                // Encode kode referral untuk keamanan URL
+                const encodedCode = encodeURIComponent(referralCode);
+                finalTargetUrl = baseTargetUrl + '&' + targetParamName + '=' + encodedCode;
+                infoEl.textContent = `Mengirim kode referral: ${referralCode}`;
+            } else {
+                infoEl.textContent = 'Tidak ada kode referral yang ditemukan. Anda akan diarahkan tanpa kode.';
+            }
+
+            // Update tautan manual
+            linkEl.href = finalTargetUrl;
+
+            // Update meta refresh dengan URL yang sudah lengkap (untuk cadangan)
+            let metaRefresh = document.querySelector('meta[http-equiv="refresh"]');
+            if (metaRefresh) {
+                metaRefresh.setAttribute('content', '2;url=\'' + finalTargetUrl + '\'');
+            }
+
+            // Lakukan redirect menggunakan JavaScript (metode utama)
+            // Beri sedikit penundaan agar pesan terbaca
+            setTimeout(function() {
+                window.location.href = finalTargetUrl;
+            }, 2000); // Redirect setelah 2 detik
+        })();
+    </script>
+</body>
+</html>

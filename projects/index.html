@@ -1,0 +1,989 @@
+<html lang="id" class="light"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Title & Description -->
+    <title>Portfolio | Prcuisa - AI • Automation • Smart Systems Projects</title>
+    <meta name="description" content="Explore Prcuisa's portfolio of AI automation, business systems, and smart technology installations. See our successful projects for startups, restaurants, offices, and creators.">
+    <meta name="keywords" content="portfolio, AI projects, automation case studies, smart office installation, web app development, Prcuisa projects">
+
+    <link rel="canonical" href="https://prcuisa.com/portfolio">
+    <meta property="og:title" content="Prcuisa Portfolio - AI &amp; Smart Tech Projects">
+    <meta property="og:description" content="Real projects, real results. See how we transform businesses with AI and smart technology.">
+    <meta property="og:image" content="https://prcuisa.com/og-portfolio.jpg">
+    <meta property="og:url" content="https://prcuisa.com/portfolio">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prcuisa Portfolio - AI • Automation • Smart Systems">
+    <meta name="twitter:description" content="Explore our successful technology projects and case studies.">
+
+    <link rel="icon" type="image/png" href="/logodark.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'display': ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#e6f7f9',
+                            100: '#c0ebf0',
+                            200: '#96dee7',
+                            300: '#66d1dd',
+                            400: '#3cc6d5',
+                            500: '#009AA5',
+                            600: '#008a94',
+                            700: '#007780',
+                            800: '#00656d',
+                            900: '#00464d',
+                        },
+                        accent: {
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-reverse': 'float-reverse 8s ease-in-out infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'shimmer': 'shimmer 3s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%,100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        'float-reverse': {
+                            '0%,100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(20px)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(0, 154, 165, 0.3)' },
+                            '100%': { boxShadow: '0 0 50px rgba(0, 154, 165, 0.6)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #009AA5 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+        }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .dark .glass-nav {
+            background: rgba(17, 24, 39, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+        
+        .blob-bg {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #009AA5;
+            border-radius: 3px;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        
+        .logo-img {
+            transition: opacity 0.3s ease;
+        }
+        .logo-light { display: block; }
+        .logo-dark { display: none; }
+        .dark .logo-light { display: none; }
+        .dark .logo-dark { display: block; }
+        
+        .logo-text {
+            width: 120px;
+            height: 32px;
+            background-image: url('/PRCUISAA.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+        }
+        .dark .logo-text {
+            filter: brightness(0) invert(1);
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(135deg, #009AA5, #0ea5e9);
+            color: white;
+        }
+        
+        .project-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
+        }
+        
+        @keyframes float-button {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .float-animation {
+            animation: float-button 3s ease-in-out infinite;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #009AA5, #0ea5e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.bottom-6{bottom:1.5rem}.left-1\/4{left:25%}.left-6{left:1.5rem}.right-1\/4{right:25%}.top-1\/4{top:25%}.top-2\/3{top:66.666667%}.-z-10{z-index:-10}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-12{margin-top:3rem}.mt-16{margin-top:4rem}.mt-2{margin-top:0.5rem}.mt-20{margin-top:5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1{height:0.25rem}.h-12{height:3rem}.h-16{height:4rem}.h-20{height:5rem}.h-56{height:14rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-80{height:20rem}.w-12{width:3rem}.w-16{width:4rem}.w-20{width:5rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.flex-1{flex:1 1 0%}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}.animate-float{animation:float 6s ease-in-out infinite}@keyframes float-reverse{0%,100%{transform:translateY(0)}50%{transform:translateY(20px)}}.animate-float-reverse{animation:float-reverse 8s ease-in-out infinite}@keyframes glow{0%{box-shadow:0 0 20px rgba(0, 154, 165, 0.3)}100%{box-shadow:0 0 50px rgba(0, 154, 165, 0.6)}}.animate-glow{animation:glow 2s ease-in-out infinite alternate}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}@keyframes pulse{50%{opacity:.5}}.animate-pulse-slow{animation:pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite}@keyframes scaleIn{0%{opacity:0;transform:scale(0.9)}100%{opacity:1;transform:scale(1)}}.animate-scale-in{animation:scaleIn 0.5s ease-out}@keyframes slideUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}.animate-slide-up{animation:slideUp 0.6s ease-out}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin-slow{animation:spin 20s linear infinite}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-12 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(3rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(3rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.bg-accent-400{--tw-bg-opacity:1;background-color:rgb(56 189 248 / var(--tw-bg-opacity, 1))}.bg-accent-400\/10{background-color:rgb(56 189 248 / 0.1)}.bg-accent-50{--tw-bg-opacity:1;background-color:rgb(240 249 255 / var(--tw-bg-opacity, 1))}.bg-black\/20{background-color:rgb(0 0 0 / 0.2)}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-indigo-400{--tw-bg-opacity:1;background-color:rgb(129 140 248 / var(--tw-bg-opacity, 1))}.bg-primary-100{--tw-bg-opacity:1;background-color:rgb(192 235 240 / var(--tw-bg-opacity, 1))}.bg-primary-400\/10{background-color:rgb(60 198 213 / 0.1)}.bg-primary-50{--tw-bg-opacity:1;background-color:rgb(230 247 249 / var(--tw-bg-opacity, 1))}.bg-primary-500{--tw-bg-opacity:1;background-color:rgb(0 154 165 / var(--tw-bg-opacity, 1))}.bg-primary-500\/10{background-color:rgb(0 154 165 / 0.1)}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity, 1))}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-accent-400{--tw-gradient-from:#38bdf8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(56 189 248 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-orange-400{--tw-gradient-from:#fb923c var(--tw-gradient-from-position);--tw-gradient-to:rgb(251 146 60 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-pink-400{--tw-gradient-from:#f472b6 var(--tw-gradient-from-position);--tw-gradient-to:rgb(244 114 182 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-primary-400{--tw-gradient-from:#3cc6d5 var(--tw-gradient-from-position);--tw-gradient-to:rgb(60 198 213 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-primary-500{--tw-gradient-from:#009AA5 var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 154 165 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-purple-400{--tw-gradient-from:#c084fc var(--tw-gradient-from-position);--tw-gradient-to:rgb(192 132 252 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-teal-400{--tw-gradient-from:#2dd4bf var(--tw-gradient-from-position);--tw-gradient-to:rgb(45 212 191 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-accent-500{--tw-gradient-to:#0ea5e9 var(--tw-gradient-to-position)}.to-accent-600{--tw-gradient-to:#0284c7 var(--tw-gradient-to-position)}.to-indigo-500{--tw-gradient-to:#6366f1 var(--tw-gradient-to-position)}.to-orange-600{--tw-gradient-to:#ea580c var(--tw-gradient-to-position)}.to-pink-500{--tw-gradient-to:#ec4899 var(--tw-gradient-to-position)}.to-primary-600{--tw-gradient-to:#008a94 var(--tw-gradient-to-position)}.to-purple-600{--tw-gradient-to:#9333ea var(--tw-gradient-to-position)}.to-rose-500{--tw-gradient-to:#f43f5e var(--tw-gradient-to-position)}.to-teal-600{--tw-gradient-to:#0d9488 var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pb-24{padding-bottom:6rem}.pt-16{padding-top:4rem}.pt-24{padding-top:6rem}.text-center{text-align:center}.font-display{font-family:Space Grotesk, sans-serif}.font-inter{font-family:Inter, sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.text-accent-500{--tw-text-opacity:1;color:rgb(14 165 233 / var(--tw-text-opacity, 1))}.text-accent-600{--tw-text-opacity:1;color:rgb(2 132 199 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-primary-500{--tw-text-opacity:1;color:rgb(0 154 165 / var(--tw-text-opacity, 1))}.text-primary-600{--tw-text-opacity:1;color:rgb(0 138 148 / var(--tw-text-opacity, 1))}.text-primary-700{--tw-text-opacity:1;color:rgb(0 119 128 / var(--tw-text-opacity, 1))}.text-purple-500{--tw-text-opacity:1;color:rgb(168 85 247 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-500{--tw-text-opacity:1;color:rgb(234 179 8 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.opacity-50{opacity:0.5}.opacity-70{opacity:0.7}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.blur-2xl{--tw-blur:blur(40px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-primary-400:hover{--tw-border-opacity:1;border-color:rgb(60 198 213 / var(--tw-border-opacity, 1))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:text-primary-400:hover{--tw-text-opacity:1;color:rgb(60 198 213 / var(--tw-text-opacity, 1))}.hover\:text-primary-600:hover{--tw-text-opacity:1;color:rgb(0 138 148 / var(--tw-text-opacity, 1))}.hover\:shadow-2xl:hover{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:bg-black\/50{background-color:rgb(0 0 0 / 0.5)}.group:hover .group-hover\:opacity-100{opacity:1}.dark\:inline-block:is(.dark *){display:inline-block}.dark\:hidden:is(.dark *){display:none}.dark\:border-gray-700:is(.dark *){--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.dark\:border-gray-800:is(.dark *){--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.dark\:bg-accent-900\/30:is(.dark *){background-color:rgb(12 74 110 / 0.3)}.dark\:bg-gray-800:is(.dark *){--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.dark\:bg-gray-800\/50:is(.dark *){background-color:rgb(31 41 55 / 0.5)}.dark\:bg-gray-900:is(.dark *){--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.dark\:bg-primary-900\/30:is(.dark *){background-color:rgb(0 70 77 / 0.3)}.dark\:bg-purple-900\/30:is(.dark *){background-color:rgb(88 28 135 / 0.3)}.dark\:text-gray-100:is(.dark *){--tw-text-opacity:1;color:rgb(243 244 246 / var(--tw-text-opacity, 1))}.dark\:text-gray-300:is(.dark *){--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.dark\:text-gray-400:is(.dark *){--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.dark\:text-primary-300:is(.dark *){--tw-text-opacity:1;color:rgb(102 209 221 / var(--tw-text-opacity, 1))}.dark\:text-primary-400:is(.dark *){--tw-text-opacity:1;color:rgb(60 198 213 / var(--tw-text-opacity, 1))}.dark\:text-white:is(.dark *){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.dark\:hover\:bg-gray-700:hover:is(.dark *){--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.dark\:hover\:text-primary-400:hover:is(.dark *){--tw-text-opacity:1;color:rgb(60 198 213 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}}@media (min-width: 768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:h-20{height:5rem}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-7xl{font-size:4.5rem;line-height:1}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}}</style></head>
+
+<body class="font-inter antialiased bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+
+    <!-- Animated Background Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <div class="blob-bg bg-primary-500 top-1/4 left-1/4 animate-spin-slow"></div>
+        <div class="blob-bg bg-accent-400 top-2/3 right-1/4 animate-float-reverse"></div>
+        <div class="blob-bg bg-indigo-400 bottom-1/4 left-1/3 animate-float"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 md:h-20 items-center">
+                <a href="/" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+                        <img src="/logolight.png" alt="PRCUISA Logo" class="logo-img logo-light w-6 h-6 object-contain">
+                        <img src="/logodark.png" alt="PRCUISA Logo" class="logo-img logo-dark w-6 h-6 object-contain">
+                    </div>
+                    <div class="logo-text"></div>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/#services" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Services</a>
+                    <a href="/#solutions" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">Solutions</a>
+                    <a href="/projets" class="text-primary-600 dark:text-primary-400 font-medium transition">Projects</a>
+                    <a href="/#about" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition">About</a>
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800">
+                        <i class="fas fa-sun text-yellow-500"></i>
+             <i class="fas fa-moon hidden text-gray-300"></i>
+                    </button>
+                    <a href="/#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold hover:shadow-lg transition-all">Start Project</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 dark:text-gray-300 text-2xl"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 px-4 py-4 space-y-3 hidden">
+            <a href="/#services" class="block py-2 text-gray-700 dark:text-gray-300">Services</a>
+            <a href="/#solutions" class="block py-2 text-gray-700 dark:text-gray-300">Solutions</a>
+            <a href="/portfolio" class="block py-2 text-primary-600 dark:text-primary-400 font-medium">Portfolio</a>
+            <a href="/#about" class="block py-2 text-gray-700 dark:text-gray-300">About</a>
+            <div class="py-2 flex items-center justify-between border-t border-gray-100 dark:border-gray-700">
+                <span class="text-gray-700 dark:text-gray-300">Dark Mode</span>
+                <button id="mobile-theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800">
+                    <i class="fas fa-sun text-yellow-500"></i>
+                    <i class="fas fa-moon hidden text-gray-300"></i>
+                </button>
+            </div>
+            <a href="/#contact" class="block py-2 text-center bg-primary-500 text-white rounded-full">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-24 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto animate-scale-in">
+                <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium mb-6">
+                    <i class="fas fa-folder-open mr-2"></i> Our Work
+                </div>
+                <h1 class="text-5xl md:text-7xl font-display font-bold tracking-tight text-gray-900 dark:text-white">
+                    Projects that <span class="gradient-text">transform</span><br>businesses
+                </h1>
+                <p class="mt-6 text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Explore our portfolio of AI automation, business systems, and smart technology installations. Real projects, real results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Stats -->
+    <section class="py-12 bg-gray-50 dark:bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center p-6 rounded-2xl bg-white dark:bg-gray-900 shadow-lg">
+                    <div class="stat-number text-4xl md:text-5xl font-bold gradient-text">150+</div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2 font-medium">Projects Completed</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-white dark:bg-gray-900 shadow-lg">
+                    <div class="stat-number text-4xl md:text-5xl font-bold gradient-text">50+</div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2 font-medium">Happy Clients</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-white dark:bg-gray-900 shadow-lg">
+                    <div class="stat-number text-4xl md:text-5xl font-bold gradient-text">12</div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2 font-medium">Industries Served</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-white dark:bg-gray-900 shadow-lg">
+                    <div class="stat-number text-4xl md:text-5xl font-bold gradient-text">98%</div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2 font-medium">Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section class="pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-3">
+                <button class="filter-btn active px-6 py-2.5 rounded-full font-medium transition-all hover:shadow-lg" data-filter="all">
+                    <i class="fas fa-grid-2 mr-2"></i>All Projects
+                </button>
+                <button class="filter-btn px-6 py-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium transition-all hover:shadow-lg" data-filter="business">
+                    <i class="fas fa-chart-line mr-2"></i>Business Systems
+                </button>
+                <button class="filter-btn px-6 py-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium transition-all hover:shadow-lg" data-filter="ai">
+                    <i class="fas fa-robot mr-2"></i>AI Automation
+                </button>
+                <button class="filter-btn px-6 py-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium transition-all hover:shadow-lg" data-filter="smart">
+                    <i class="fas fa-microchip mr-2"></i>Smart Tech
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 - Business Systems -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg card-hover group border border-gray-100 dark:border-gray-800" data-category="business">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary-400 to-accent-500 flex items-center justify-center">
+                            <i class="fas fa-qrcode text-white text-6xl z-10"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300"></div>
+                        <div class="absolute top-4 right-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-xs font-semibold text-primary-600">Business Systems</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">QR Code Generator System</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Self-service SaaS platform for creating dynamic QR codes for menus, forms, and marketing links.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">React</span>
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">Node.js</span>
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">AWS S3</span>
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">MongoDB</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-chart-line text-green-500"></i>
+                                <span class="text-sm font-medium">5k+ Active Users</span>
+                            </div>
+                            <button class="text-primary-500 hover:text-primary-600 font-medium text-sm flex items-center gap-1 view-project">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 - AI Automation -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg card-hover group border border-gray-100 dark:border-gray-800" data-category="ai">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent-400 to-indigo-500 flex items-center justify-center">
+                            <i class="fas fa-comment-dots text-white text-6xl z-10"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300"></div>
+                        <div class="absolute top-4 right-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-xs font-semibold text-accent-600">AI Automation</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">AI Sales Assistant for Retail</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">WhatsApp-based AI assistant that handles customer inquiries, product recommendations, and follow-ups 24/7.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">OpenAI API</span>
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">WhatsApp Business</span>
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">Python</span>
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">PostgreSQL</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-bolt text-yellow-500"></i>
+                                <span class="text-sm font-medium">65% Faster Response</span>
+                            </div>
+                            <button class="text-primary-500 hover:text-primary-600 font-medium text-sm flex items-center gap-1 view-project">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Smart Tech -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg card-hover group border border-gray-100 dark:border-gray-800" data-category="smart">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                            <i class="fas fa-microchip text-white text-6xl z-10"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300"></div>
+                        <div class="absolute top-4 right-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-xs font-semibold text-purple-600">Smart Tech</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">Smart Office Installation</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Complete IoT setup for a 20-person creative agency including automated lighting, climate control, and security.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">Ubiquiti</span>
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">IoT Sensors</span>
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">Home Assistant</span>
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">Custom Dashboard</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-leaf text-green-500"></i>
+                                <span class="text-sm font-medium">30% Energy Saving</span>
+                            </div>
+                            <button class="text-primary-500 hover:text-primary-600 font-medium text-sm flex items-center gap-1 view-project">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 - Business Systems -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg card-hover group border border-gray-100 dark:border-gray-800" data-category="business">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center">
+                            <i class="fas fa-calendar-check text-white text-6xl z-10"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300"></div>
+                        <div class="absolute top-4 right-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-xs font-semibold text-primary-600">Business Systems</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">Salon Booking & CRM System</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Complete appointment booking system with customer management, automated reminders, and payment integration.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">Vue.js</span>
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">Laravel</span>
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">MySQL</span>
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">Midtrans</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-calendar text-primary-500"></i>
+                                <span class="text-sm font-medium">500+ Bookings/mo</span>
+                            </div>
+                            <button class="text-primary-500 hover:text-primary-600 font-medium text-sm flex items-center gap-1 view-project">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 - AI Automation -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg card-hover group border border-gray-100 dark:border-gray-800" data-category="ai">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                            <i class="fas fa-file-alt text-white text-6xl z-10"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300"></div>
+                        <div class="absolute top-4 right-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-xs font-semibold text-accent-600">AI Automation</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">AI Document Processing</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Automated invoice and receipt processing system that extracts data and syncs with accounting software.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">OCR API</span>
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">Python</span>
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">FastAPI</span>
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">QuickBooks API</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-clock text-blue-500"></i>
+                                <span class="text-sm font-medium">10h Saved Weekly</span>
+                            </div>
+                            <button class="text-primary-500 hover:text-primary-600 font-medium text-sm flex items-center gap-1 view-project">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 - Smart Tech -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg card-hover group border border-gray-100 dark:border-gray-800" data-category="smart">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center">
+                            <i class="fas fa-video text-white text-6xl z-10"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300"></div>
+                        <div class="absolute top-4 right-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-xs font-semibold text-purple-600">Smart Tech</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">CCTV & Smart Security System</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">AI-powered surveillance system with facial recognition, motion detection, and mobile alerts for a warehouse.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">Hikvision</span>
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">AI NVR</span>
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">Mobile App</span>
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">Cloud Storage</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-shield text-green-500"></i>
+                                <span class="text-sm font-medium">24/7 Monitoring</span>
+                            </div>
+                            <button class="text-primary-500 hover:text-primary-600 font-medium text-sm flex items-center gap-1 view-project">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 - Business Systems -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg card-hover group border border-gray-100 dark:border-gray-800" data-category="business">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+                            <i class="fas fa-store text-white text-6xl z-10"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300"></div>
+                        <div class="absolute top-4 right-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-xs font-semibold text-primary-600">Business Systems</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">Restaurant Order Management</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Integrated POS system with kitchen display, online ordering, and real-time inventory tracking for a restaurant chain.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">Next.js</span>
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">Prisma</span>
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">WebSocket</span>
+                            <span class="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-xs text-primary-600">PostgreSQL</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-utensils text-orange-500"></i>
+                                <span class="text-sm font-medium">3 Locations</span>
+                            </div>
+                            <button class="text-primary-500 hover:text-primary-600 font-medium text-sm flex items-center gap-1 view-project">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 - AI Automation -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg card-hover group border border-gray-100 dark:border-gray-800" data-category="ai">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center">
+                            <i class="fas fa-chart-pie text-white text-6xl z-10"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300"></div>
+                        <div class="absolute top-4 right-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-xs font-semibold text-accent-600">AI Automation</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">AI Lead Scoring & Qualification</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Machine learning model that scores and qualifies incoming leads, automatically routing hot leads to sales team.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">TensorFlow</span>
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">HubSpot API</span>
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">Python</span>
+                            <span class="px-3 py-1 bg-accent-50 dark:bg-accent-900/30 rounded-full text-xs text-accent-600">BigQuery</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-fire text-red-500"></i>
+                                <span class="text-sm font-medium">40% More Conversions</span>
+                            </div>
+                            <button class="text-primary-500 hover:text-primary-600 font-medium text-sm flex items-center gap-1 view-project">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9 - Smart Tech -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg card-hover group border border-gray-100 dark:border-gray-800" data-category="smart">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-green-500 flex items-center justify-center">
+                            <i class="fas fa-wifi text-white text-6xl z-10"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300"></div>
+                        <div class="absolute top-4 right-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-xs font-semibold text-purple-600">Smart Tech</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">Enterprise WiFi & Network Setup</h3>
+                        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">High-performance network infrastructure for a 50-person co-working space with seamless roaming and guest management.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">Ubiquiti UniFi</span>
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">pfSense</span>
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">VLAN</span>
+                            <span class="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 rounded-full text-xs text-purple-600">RADIUS</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-signal text-blue-500"></i>
+                                <span class="text-sm font-medium">99.9% Uptime</span>
+                            </div>
+                            <button class="text-primary-500 hover:text-primary-600 font-medium text-sm flex items-center gap-1 view-project">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase text-sm">Testimonials</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold mt-4">What our clients say</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mt-6 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
+                    <i class="fas fa-quote-right text-4xl text-primary-500 opacity-30 mb-4"></i>
+                    <p class="text-gray-600 dark:text-gray-400 italic">"Prcuisa built our entire booking system and it's been a game-changer. Our no-show rate dropped by 70% with automated reminders."</p>
+                    <div class="mt-6 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary-400 to-accent-500 flex items-center justify-center text-white font-bold">MA</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Maya Andini</h4>
+                            <p class="text-sm text-gray-500">Owner, Glow Salon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
+                    <i class="fas fa-quote-right text-4xl text-primary-500 opacity-30 mb-4"></i>
+                    <p class="text-gray-600 dark:text-gray-400 italic">"The AI WhatsApp assistant handles 80% of our customer inquiries automatically. We can now focus on growing the business instead of typing replies all day."</p>
+                    <div class="mt-6 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-accent-400 to-indigo-500 flex items-center justify-center text-white font-bold">BW</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Budi Wijaya</h4>
+                            <p class="text-sm text-gray-500">Founder, TechStyle Store</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
+                    <i class="fas fa-quote-right text-4xl text-primary-500 opacity-30 mb-4"></i>
+                    <p class="text-gray-600 dark:text-gray-400 italic">"Smart office installation was seamless. Our team loves the automated lighting and the energy savings are already visible on our electricity bill."</p>
+                    <div class="mt-6 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white font-bold">RS</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Rina Suryani</h4>
+                            <p class="text-sm text-gray-500">CEO, Creativo Agency</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-500 to-accent-500">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-white">Ready to build your next project?</h2>
+            <p class="mt-4 text-xl text-white/90">Let's discuss how we can transform your business with AI, automation, and smart technology.</p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/#contact" class="px-8 py-4 rounded-full bg-white text-primary-600 font-semibold hover:shadow-xl transition-all transform hover:scale-105">Start a Project →</a>
+                <a href="/#services" class="px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+                            <img src="/logodark.png" alt="PRCUISA Logo" class="w-6 h-6 object-contain">
+                        </div>
+                        <div class="logo-text"></div>
+                    </div>
+                    <p class="mt-4 text-sm">AI • Automation • Smart Systems</p>
+                    <p class="mt-2 text-xs">© 2026 Prcuisa. All rights reserved.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold">Services</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li class="hover:text-primary-400 transition cursor-pointer">Business Systems</li>
+                        <li class="hover:text-primary-400 transition cursor-pointer">AI Automation</li>
+                        <li class="hover:text-primary-400 transition cursor-pointer">Smart Tech Installation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold">Company</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li class="hover:text-primary-400 transition cursor-pointer">About</li>
+                        <li class="hover:text-primary-400 transition cursor-pointer">Portfolio</li>
+                        <li class="hover:text-primary-400 transition cursor-pointer">Contact</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold">Connect</h4>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="http://instagram.com/prcuisa" target="_blank" rel="noopener noreferrer" class="hover:text-primary-400 transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://t.me/prcuisa" target="_blank" rel="noopener noreferrer" class="hover:text-primary-400 transition"><i class="fab fa-telegram text-xl"></i></a>
+                        <a href="https://id.linkedin.com/in/denecsa" target="_blank" rel="noopener noreferrer" class="hover:text-primary-400 transition"><i class="fab fa-linkedin text-xl"></i></a>
+                    </div>
+                    <p class="mt-4 text-sm hover:text-primary-400 transition cursor-pointer">prcuisa@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Floating AI Agent Bubble Modal -->
+    <div id="aiAgentModal" class="fixed inset-0 z-50 hidden items-center justify-center px-4" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);">
+        <div class="relative w-full max-w-sm bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden animate-scale-in">
+            <div class="flex justify-between items-center p-4 border-b border-gray-100 dark:border-gray-800">
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span class="font-semibold text-gray-800 dark:text-white">AI Agent</span>
+                </div>
+                <button id="closeAgentBtn" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="h-[600px] w-full">
+                <iframe src="https://agent.prcuisa.com/" class="w-full h-full border-0" title="AI Agent"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Button - Updated text -->
+    <a href="#" id="openAgentBtn" class="fixed bottom-6 right-6 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-5 py-3 rounded-full shadow-lg flex items-center gap-2 hover:shadow-xl transition-all z-40 float-animation">
+        <i class="fas fa-comment-dots"></i> Chat AI Agent
+    </a>
+    
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen px-4 py-8">
+            <div class="fixed inset-0 bg-black/50 backdrop-blur-sm" id="modal-overlay"></div>
+            <div class="relative bg-white dark:bg-gray-900 rounded-2xl max-w-3xl w-full p-8 shadow-2xl animate-scale-in">
+                <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+                <div id="modal-content">
+                    <!-- Content will be injected via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode toggle
+        const html = document.documentElement;
+        const themeBtn = document.getElementById('theme-toggle');
+        const mobileThemeBtn = document.getElementById('mobile-theme-toggle');
+        
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        
+        function toggleTheme() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                updateThemeIcons();
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                updateThemeIcons();
+            }
+        }
+        
+        function updateThemeIcons() {
+            const isDark = html.classList.contains('dark');
+            if (themeBtn) {
+                const sunIcon = themeBtn.querySelector('.fa-sun');
+                const moonIcon = themeBtn.querySelector('.fa-moon');
+                if (isDark) {
+                    sunIcon?.classList.add('hidden');
+                    moonIcon?.classList.remove('hidden');
+                } else {
+                    sunIcon?.classList.remove('hidden');
+                    moonIcon?.classList.add('hidden');
+                }
+            }
+            if (mobileThemeBtn) {
+                const mobileSunIcon = mobileThemeBtn.querySelector('.fa-sun');
+                const mobileMoonIcon = mobileThemeBtn.querySelector('.fa-moon');
+                if (isDark) {
+                    mobileSunIcon?.classList.add('hidden');
+                    mobileMoonIcon?.classList.remove('hidden');
+                } else {
+                    mobileSunIcon?.classList.remove('hidden');
+                    mobileMoonIcon?.classList.add('hidden');
+                }
+            }
+        }
+        
+        if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
+        if(mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleTheme);
+        updateThemeIcons();
+        
+        // Mobile menu
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu')?.classList.toggle('hidden');
+        });
+        
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu')?.classList.add('hidden');
+            });
+        });
+        
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-gradient-to-r', 'from-primary-500', 'to-accent-500', 'text-white');
+                    b.classList.add('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+                });
+                btn.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+                btn.classList.add('active', 'bg-gradient-to-r', 'from-primary-500', 'to-accent-500', 'text-white');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Modal functionality
+        const modal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModal = document.getElementById('close-modal');
+        const modalOverlay = document.getElementById('modal-overlay');
+        
+        const projectDetails = {
+            'QR Code Generator System': {
+                title: 'QR Code Generator System',
+                client: 'SaaS Platform',
+                duration: '3 months',
+                year: '2024',
+                description: 'A comprehensive self-service QR code platform that allows businesses to create, customize, and track dynamic QR codes. Features include bulk generation, analytics dashboard, custom branding, and API access.',
+                challenge: 'The client needed a scalable solution that could handle thousands of QR code generations daily with real-time analytics tracking.',
+                solution: 'We built a microservices architecture using React for the frontend, Node.js for the API, AWS S3 for asset storage, and MongoDB for flexible data storage. Implemented Redis caching for high-performance QR code delivery.',
+                results: ['5,000+ active users in first 3 months', '99.9% uptime', 'Average 50ms QR code generation time', '30% month-over-month growth'],
+                image: 'qrcode'
+            },
+            'AI Sales Assistant for Retail': {
+                title: 'AI Sales Assistant for Retail',
+                client: 'TechStyle Store',
+                duration: '2 months',
+                year: '2024',
+                description: 'An intelligent WhatsApp-based assistant that handles product inquiries, provides recommendations, processes orders, and follows up with customers automatically.',
+                challenge: 'The retail client was overwhelmed with WhatsApp inquiries and couldn\'t respond quickly enough, losing potential sales.',
+                solution: 'We integrated OpenAI\'s GPT API with WhatsApp Business API, built a product knowledge base, and created automated workflows for order processing and follow-ups.',
+                results: ['65% faster response time', '40% increase in sales conversions', '24/7 customer support coverage', '80% reduction in manual responses'],
+                image: 'ai-sales'
+            },
+            'Smart Office Installation': {
+                title: 'Smart Office Installation',
+                client: 'Creativo Agency',
+                duration: '2 weeks',
+                year: '2024',
+                description: 'Complete IoT and smart technology installation for a creative agency office including automated lighting, climate control, security systems, and centralized dashboard.',
+                challenge: 'The agency wanted to modernize their office with smart technology while ensuring all systems worked seamlessly together and were easy to manage.',
+                solution: 'We installed Ubiquiti network infrastructure, smart sensors throughout the office, automated lighting zones, and built a custom Home Assistant dashboard for centralized control.',
+                results: ['30% reduction in energy costs', 'Improved employee comfort and productivity', 'Centralized control of all office systems', 'Automated security and access control'],
+                image: 'smart-office'
+            }
+        };
+        
+        document.querySelectorAll('.view-project').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const card = e.target.closest('.portfolio-item');
+                const title = card.querySelector('h3').textContent;
+                const details = projectDetails[title] || {
+                    title: title,
+                    client: 'Client',
+                    duration: 'N/A',
+                    year: '2025',
+                    description: 'Detailed project information coming soon.',
+                    challenge: 'Information coming soon.',
+                    solution: 'Information coming soon.',
+                    results: ['Information coming soon.'],
+                    image: 'default'
+                };
+                
+                modalContent.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="h-56 rounded-xl bg-gradient-to-br from-primary-400 to-accent-500 flex items-center justify-center">
+                            <i class="fas fa-${details.image === 'qrcode' ? 'qrcode' : details.image === 'ai-sales' ? 'comment-dots' : details.image === 'smart-office' ? 'microchip' : 'folder'} text-white text-6xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold">${details.title}</h2>
+                            <div class="flex flex-wrap gap-4 mt-3 text-sm text-gray-500">
+                                <span><i class="fas fa-building mr-1"></i> ${details.client}</span>
+                                <span><i class="fas fa-clock mr-1"></i> ${details.duration}</span>
+                                <span><i class="fas fa-calendar mr-1"></i> ${details.year}</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Overview</h4>
+                            <p class="text-gray-600 dark:text-gray-400">${details.description}</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Challenge</h4>
+                            <p class="text-gray-600 dark:text-gray-400">${details.challenge}</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Solution</h4>
+                            <p class="text-gray-600 dark:text-gray-400">${details.solution}</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Key Results</h4>
+                            <ul class="space-y-2">
+                                ${details.results.map(r => `<li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        function closeModalFunc() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        closeModal?.addEventListener('click', closeModalFunc);
+        modalOverlay?.addEventListener('click', closeModalFunc);
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModalFunc();
+            }
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('/#') && window.location.pathname === '/') {
+                    e.preventDefault();
+                    const target = document.querySelector(href.substring(1));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // AI Agent Modal Toggle
+        const openBtn = document.getElementById('openAgentBtn');
+        const modalz = document.getElementById('aiAgentModal');
+        const closeBtn = document.getElementById('closeAgentBtn');
+
+        if (openBtn && modalz && closeBtn) {
+            // Remove default anchor behavior
+            openBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modalz.classList.remove('hidden');
+                modalz.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            });
+
+            function closeModal() {
+                modalz.classList.add('hidden');
+                modalz.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            
+            // Close when clicking outside the modal content
+            modal.addEventListener('click', (e) => {
+                if (e.target === modalz) closeModal();
+            });
+
+            // Close on ESC key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modalz.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+        }
+    </script>
+
+</body></html>
